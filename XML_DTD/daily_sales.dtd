@@ -1,0 +1,35 @@
+<!ELEMENT daily_sales (clients, sales)>
+<!ELEMENT clients (client+)>
+<!ELEMENT client (name, address, contacts)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT contacts (contact+)>
+<!ELEMENT contact (#PCDATA)>
+<!ELEMENT sales (sale+)>
+<!ELEMENT sale (products, order_price, shipping, final_price, delivery_address, invoice_address)>
+<!ELEMENT products (product+)>
+<!ELEMENT product (#PCDATA)>
+<!ELEMENT product_id (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT order_price (#PCDATA)>
+<!ELEMENT shipping (#PCDATA)>
+<!ELEMENT final_price (#PCDATA)>
+<!ELEMENT delivery_address (#PCDATA)>
+<!ELEMENT invoice_address (#PCDATA)>
+
+<!ATTLIST daily_sales day CDATA #REQUIRED
+					month CDATA #REQUIRED
+					year CDATA #REQUIRED
+					store CDATA #REQUIRED
+					local CDATA #REQUIRED
+					tin CDATA #REQUIRED>
+<!ATTLIST client id_c ID #REQUIRED
+					tin_c CDATA #REQUIRED>
+<!ATTLIST address locality CDATA #REQUIRED>
+<!ATTLIST contact type CDATA #REQUIRED>
+<!ATTLIST sale id_s CDATA #REQUIRED
+					client IDREF #REQUIRED
+					unit CDATA #REQUIRED>
+<!ATTLIST product quantity CDATA #REQUIRED>
+<!ATTLIST delivery_address locality CDATA #IMPLIED>
+<!ATTLIST invoice_address locality CDATA #IMPLIED>
