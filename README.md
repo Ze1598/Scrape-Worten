@@ -11,7 +11,7 @@ The "XML_DTD/catalog" files are about the mini-catalog created with the scraped 
 The "XML_DTD/daily_sales" are about the informations pertaining the daily sales of the online store. All the information on those files is randomly generated from sample_citizen_data.txt file and thus fake.
 
 In the future, I'd like to create a Python package focused on the content of the first half, that is, a Python script to make queries to worten.pt and scrape information about the products. 
-In a way, I'd like for it to be an rudimentary API of sorts to scrape information about products, based on user-queries. At the moment, I am planning to return that scraped information in JSON and XML, letting the user choose which format to be returned.
+In a way, I'd like for it to be a rudimentary API of sorts to scrape information about products, based on user-queries. At the moment, I am planning to return that scraped information in JSON and XML, letting the user choose which format to be returned.
 
 Update log:
 
