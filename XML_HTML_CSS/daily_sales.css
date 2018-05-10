@@ -1,0 +1,122 @@
+body {
+        background: linear-gradient(135deg, #c7503b,#a80404);
+        font-family: Lato,sans-serif;
+    }
+
+
+    .file-header {
+        margin-bottom: 75px;
+    }
+
+
+    tr:hover {
+        border: 2px solid black;
+    }
+
+
+    li {
+        padding-right: 25px;
+        list-style-type: none;
+    }
+
+
+    div {
+        background: linear-gradient(135deg, #46a3f0, #2036fc);
+        padding: 5px 5px 10px 10px;
+        margin: 15px;
+        border: 2px solid black;
+    }
+    div:hover {
+        border: 3px solid black;
+        background: linear-gradient(135deg, #46f0b7, #007552);
+    }
+
+
+    .table-summary {
+        border-collapse: collapse;
+        text-align: center;
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+    }
+    .table-summary th {
+        border: 1px solid black;
+    }
+
+
+    #clients-sales {
+        border-collapse: collapse;
+        text-align: center;
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+    }
+    #clients-sales th, #clients-sales td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    #clients-sales tr:nth-child(2n+2) {
+        background-color: #c5c5c5;
+    }
+
+
+    #clients {
+        border-collapse: collapse;
+        text-align: center;
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+    }
+    #clients th, #clients td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    #clients tr:nth-child(2n+2) {
+        background-color: #c5c5c5;
+    }
+
+
+    #sales {
+        border-collapse: collapse;
+        text-align: center;
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+    }
+    #sales th, #sales td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    #sales tr:nth-child(2n+2) {
+        background-color: #c5c5c5;
+    }
+
+
+    #products {
+        border-collapse: collapse;
+        text-align: center;
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+    }
+    #products th, #products td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    #products tr:nth-child(2n+2) {
+        background-color: #c5c5c5;
+    }
+
+
+    .top {
+        width: 8%;
+        border: 1px solid #a1a14d;
+        background: yellow;
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        left: 1150px;
+    }
+    .top:hover {
+        border: 2px solid #a1a14d;
+    }

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Worten Daily Sales</title>
+        <link href="manual_daily_sales.css" type="text/css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- <div class="file-header" id="top"> -->
+        <h1 id="top">Worten online store's daily sales report</h1>
+        <h2>Date: 26/6/2018</h2>
+        <!-- </div> -->
+        
+        <!-- A table used to navigate through the web page, with hyperlinks to
+            the different tables. -->
+        <div class="first-table">
+            <h2>Tables' Summary</h2>
+            <table class="table-summary">
+                <tr>
+                    <th><a href="#clients-sales">Clients/Sales</a></th>
+                    <th><a href="#clients">Clients</a></th>
+                    <th><a href="#sales">Sales</a></th>
+                    <th><a href="#products">Products</a></th>
+                </tr>
+            </table>
+            <p class="top"><a href="#top">Page Top</a></p>
+        </div>
+
+        <!-- This first table will only display information the match
+            of information between clients and the orders they made.
+            In this case only the prices of the order will be shown
+            (price without shipping, shipping and final price). A
+            client will appear more than once in the table if it has
+            placed more than one order on the same day. -->
+        <div class="second-table">
+            <h2>Clients/Sales' Table</h2>
+            <table id="clients-sales">
+                <tr>
+                    <th>Client ID</th>
+                    <th>Sale ID</th>
+                    <th>Subtotal</th>
+                    <th>Shipping</th>
+                    <th>Final Price</th>
+                </tr>
+                <tr>
+                    <td><a href="#C3">C3</a></td>
+                    <td><a href="#S1">S1</a></td>
+                    <td>€3520.0</td>
+                    <td>€47.5</td>
+                    <td>€3567.5</td>
+                </tr>
+                <tr>
+                    <td><a href="#C2">C2</a></td>
+                    <td><a href="#S2">S2</a></td>
+                    <td>€4712.0</td>
+                    <td>€22.5</td>
+                    <td>€4734.5</td>
+                </tr>
+                <tr>
+                    <td><a href="#C4">C4</a></td>
+                    <td><a href="#S3">S3</a></td>
+                    <td>€480.0</td>
+                    <td>€22.5</td>
+                    <td>€502.5</td>
+                </tr>
+                <tr>
+                    <td><a href="#C5">C5</a></td>
+                    <td><a href="#S4">S4</a></td>
+                    <td>€1920.0</td>
+                    <td>€7.5</td>
+                    <td>€1927.5</td>
+                </tr>
+                <tr>
+                    <td><a href="#C5">C5</a></td>
+                    <td><a href="#S5">S5</a></td>
+                    <td>€842.0</td>
+                    <td>€45.0</td>
+                    <td>€887.0</td>
+                </tr>
+            </table>
+            <p class="top"><a href="#top">Page Top</a></p>
+        </div>
+
+        <!-- The second table is exclusive to clients, that is, each row
+            represents a single client, and displays all the information
+            saved in its "client profile". It will also show the total
+            spent by the client today. -->
+        <div class="third-table">
+            <h2>Client's Table</h2>
+            <table id="clients">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>TIN</th>
+                    <th>Locality</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>E-mail</th>
+                </tr>
+                <tr>
+                    <td id="C2">C2</td>
+                    <td>Jennifer Davis</td>
+                    <td>386931498</td>
+                    <td>P</td>
+                    <td>890 Main St., Pythonville LA 29947</td>
+                    <td>568-555-6051</td>
+                    <td>jennifer_davis@email.com</td>
+                </tr>
+                <tr>
+                    <td id="C3">C3</td>
+                    <td>Michael Smith</td>
+                    <td>201728958</td>
+                    <td>H</td>
+                    <td>732 High St., Valyria KY 97152</td>
+                    <td>516-555-4615</td>
+                    <td>michael_smith@email.com</td>
+                </tr>
+                <tr>
+                    <td id="C4">C4</td>
+                    <td>Barbara Williams</td>
+                    <td>513672385</td>
+                    <td>W</td>
+                    <td>212 Cedar St., Sunnydale CT 74983</td>
+                    <td>998-555-7385</td>
+                    <td>barbara_williams@email.com</td>
+                </tr>
+                <tr>
+                    <td id="C5">C5</td>
+                    <td>Eric Williams</td>
+                    <td>361113513</td>
+                    <td>A</td>
+                    <td>969 High St., Atlantis VA 34075</td>
+                    <td>900-555-3205</td>
+                    <td>eric_williams@email.com</td>
+                </tr>
+            </table>
+            <p class="top"><a href="#top">Page Top</a></p>
+        </div>
+        
+        <!-- Table exclusive to the sales. Show detailed informations about the
+            sales. -->
+        <div class="fourth-table">
+            <h2>Sales' Table</h2>
+            <table id="sales">
+                <tr>
+                    <th>Sale ID</th>
+                    <th>Client ID</th>
+                    <th>Product IDs/<br>Quantities</th>
+                    <th>Subtotal</th>
+                    <th>Shipping</th>
+                    <th>Final Price</th>
+                    <th>Delivery Address</th>
+                    <th>Invoice Address</th>
+                </tr>
+                <tr>
+                    <td id="S1">S1</td>
+                    <td><a href="#C3">C3</a></td>
+                    <td>
+                        <ul>
+                            <li>P1969822 / 8</li>
+                            <li>P9042590 / 3</li>
+                            <li>P6989884 / 8</li>
+                        </ul>
+                    </td>
+                    <td>€3520.0</td>
+                    <td>€47.5</td>
+                    <td>€3567.5</td>
+                    <td></td>
+                    <td>121 Hill St., Braavos UT 92474</td>
+                </tr>
+                <tr>
+                    <td id="S2">S2</td>
+                    <td><a href="#C2">C2</a></td>
+                    <td>
+                        <ul>
+                            <li>P6892632 / 1</li>
+                            <li>P9862574 / 8</li>
+                        </ul>
+                    </td>
+                    <td>€4712.0</td>
+                    <td>€22.5</td>
+                    <td>€4734.5</td>
+                    <td>838 Main St., Balmora MT 56526</td>
+                    <td>173 Main St., Springfield RI 55924</td>
+                </tr>
+                <tr>
+                    <td id="S3">S3</td>
+                    <td><a href="#C4">C4</a></td>
+                    <td>
+                        <ul>
+                            <li>P6867320 / 6</li>
+                            <li>P7856282 / 3</li>
+                        </ul>
+                    </td>
+                    <td>€480.0</td>
+                    <td>€22.5</td>
+                    <td>€502.5</td>
+                    <td></td>
+                    <td>607 Washington St., Blackwater NH 97183</td>
+                </tr>
+                <tr>
+                    <td id="S4">S4</td>
+                    <td><a href="#C5">C5</a></td>
+                    <td>
+                        <ul>
+                            <li>P8034556 / 3</li>
+                        </ul>
+                    </td>
+                    <td>€1920.0</td>
+                    <td>€7.5</td>
+                    <td>€1927.5</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="S5">S5</td>
+                    <td><a href="#C5">C5</a></td>
+                    <td>
+                        <ul>
+                            <li>P4562858 / 7</li>
+                            <li>P3614060 / 9</li>
+                            <li>P5429083 / 2</li>
+                        </ul>
+                    </td>
+                    <td>€842.0</td>
+                    <td>€45.0</td>
+                    <td>€887.0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <p class="top"><a href="#top">Page Top</a></p>
+        </div>
+
+        <!-- A table with all the products that were sold today. -->
+        <div class="fifth-table">
+            <h2>Product's Table</h2>
+            <table id="products">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Quantity Sold</th>
+                </tr>
+                <tr>
+                    <td>P1969822</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>P9042590</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>P6989884</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>P6892632</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>P9862574</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>P6867320</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>P7856282</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>P8034556</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>P4562858</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>P3614060</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>P5429083</td>
+                    <td>2</td>
+                </tr>
+            </table>
+            <p class="top"><a href="#top">Page Top</a></p>
+        </div>
+
+    </body>
+
+</html>

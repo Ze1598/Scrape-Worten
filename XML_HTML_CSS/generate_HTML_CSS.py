@@ -129,158 +129,158 @@ def gen_html_css(xml_file):
         f.write(html_string)
 
 
-# Create the .css
-css_string = '''body {
-	background: linear-gradient(135deg, #c7503b,#a80404);
-	font-family: Lato,sans-serif;
-}
+    # Create the .css
+    css_string = '''body {
+        background: linear-gradient(135deg, #c7503b,#a80404);
+        font-family: Lato,sans-serif;
+    }
 
 
 
 
-.prod-ref {
-	padding-left: 15px;
-}
+    .prod-ref {
+        padding-left: 15px;
+    }
 
-.database {
-	text-align: center;
-	border: 2px solid black;
-	border-collapse: collapse;
-}
+    .database {
+        text-align: center;
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
 
-.prod-ref:before {
-	content: "List of catalog products";
-	display: block;
-	font-size: 200%;
-}
+    .prod-ref:before {
+        content: "List of catalog products";
+        display: block;
+        font-size: 200%;
+    }
 
-.database th, .database td {
-	border: 1px solid black;
-}
-tr {
-	background-color: white;
-}
-tr:hover {
-	border: 2px solid black;
-}
-tr:nth-child(2n+2) {
-	background-color: #c5c5c5;
-}
-th, td {
-	padding: 5px;
-}
-
-
-
-
-.prod {
-	background: linear-gradient(135deg, #46a3f0, #2036fc);
-	padding: 5px 5px 10px 10px;
-	margin: 15px;
-	border: 2px solid black;
-	width: 70%;
-}
-
-.prod:hover {
-	border: 5px solid black;
-	background: linear-gradient(135deg, #46f0b7, #007552);
-}
-
-.prod-name {
-	font-weight: lighter;
-}
-
-.avail {
-	width: 20%;
-	padding: 3px;
-	border: 1px dotted #015a01;
-}
-.not-avail {
-	width: 25%;
-	padding: 3px;
-	border: 1px dotted grey;
-}
-
-.prod-id:before {
-	content: "Product ID: ";
-	font-size: 105%;
-	font-weight: bold;
-}
-
-.prod-desc:before {
-	content: "Product description: ";
-	display: block;
-	padding-bottom: 10px;
-	font-size: 110%;
-	font-weight: bold;
-}
-
-.extra-info:before {
-	content: "More information: ";
-	display: block;
-	font-size: 110%;
-	font-weight: bold;
-	margin-bottom: 10px;
-}
-
-.extra-info {
-	font-size: 105%;
-}
-
-.prod-info {
-	padding: 10px;
-}
-.prod-id {
-	font-size: 120%;
-}
-div img {
-	border: 3px solid grey;
-}
-.prod-desc {
-	padding: 10px;
-	text-align:justify;
-	width: 70%;
-}
-.extra-info {
-	border-collapse: collapse;
-	padding: 10px 10px 3px 10px;
-}
+    .database th, .database td {
+        border: 1px solid black;
+    }
+    tr {
+        background-color: white;
+    }
+    tr:hover {
+        border: 2px solid black;
+    }
+    tr:nth-child(2n+2) {
+        background-color: #c5c5c5;
+    }
+    th, td {
+        padding: 5px;
+    }
 
 
 
-.extra {
-	border-collapse: collapse;
-	border: 2px solid grey;
-	margin-bottom: 10px;
-}
-.extra tr {
-	border-bottom: 1px solid grey;
-	padding: 5px 5px 5px 10px;
-}
-.extra tr:hover {
-	border: 2px solid black;
-	padding: 5px;
-}
 
-.top {
-	width: 8%;
-	border: 1px solid #a1a14d;
-	background: yellow;
-	text-decoration: none;
-	text-align: center;
-	position: relative;
-	left: 850px;
-}
+    .prod {
+        background: linear-gradient(135deg, #46a3f0, #2036fc);
+        padding: 5px 5px 10px 10px;
+        margin: 15px;
+        border: 2px solid black;
+        width: 70%;
+    }
 
-.top:hover {
-	border: 2px solid #a1a14d;
-}'''
+    .prod:hover {
+        border: 5px solid black;
+        background: linear-gradient(135deg, #46f0b7, #007552);
+    }
 
-with open('catalog.css', 'w') as f:
-        f.write(css_string)
+    .prod-name {
+        font-weight: lighter;
+    }
+
+    .avail {
+        width: 20%;
+        padding: 3px;
+        border: 1px dotted #015a01;
+    }
+    .not-avail {
+        width: 25%;
+        padding: 3px;
+        border: 1px dotted grey;
+    }
+
+    .prod-id:before {
+        content: "Product ID: ";
+        font-size: 105%;
+        font-weight: bold;
+    }
+
+    .prod-desc:before {
+        content: "Product description: ";
+        display: block;
+        padding-bottom: 10px;
+        font-size: 110%;
+        font-weight: bold;
+    }
+
+    .extra-info:before {
+        content: "More information: ";
+        display: block;
+        font-size: 110%;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .extra-info {
+        font-size: 105%;
+    }
+
+    .prod-info {
+        padding: 10px;
+    }
+    .prod-id {
+        font-size: 120%;
+    }
+    div img {
+        border: 3px solid grey;
+    }
+    .prod-desc {
+        padding: 10px;
+        text-align:justify;
+        width: 70%;
+    }
+    .extra-info {
+        border-collapse: collapse;
+        padding: 10px 10px 3px 10px;
+    }
+
+
+
+    .extra {
+        border-collapse: collapse;
+        border: 2px solid grey;
+        margin-bottom: 10px;
+    }
+    .extra tr {
+        border-bottom: 1px solid grey;
+        padding: 5px 5px 5px 10px;
+    }
+    .extra tr:hover {
+        border: 2px solid black;
+        padding: 5px;
+    }
+
+    .top {
+        width: 8%;
+        border: 1px solid #a1a14d;
+        background: yellow;
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        left: 850px;
+    }
+
+    .top:hover {
+        border: 2px solid #a1a14d;
+    }'''
+
+    with open('catalog.css', 'w') as f:
+            f.write(css_string)
 
 if __name__ == '__main__':
     start = time.time()
     gen_html_css('catalog.xml')
     print('Your HTML and CSS have been generated.')
-    print('Elapsed time:', round(time.time()-start, 2))
+    print('Elapsed time:', round(time.time()-start, 2), 'seconds.')
