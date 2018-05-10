@@ -19,7 +19,9 @@ Update log:
 
 -(apr. 11th 2018) Created the repository, with all the necessary files for the first half of the project a.k.a. the XML and DTD half.
 
--(may 5th 2018) Updated the repository, with the .html and .css files, along with a .python script to create those files from the generated .xml file; Also updated the structure of the repository (everything is in a single folder)
+-(may 5th 2018) Updated the repository, with the .html and .css files, along with a .python script to create those files from the generated .xml file; Also updated the structure of the repository (everything is in a single folder).
+
+-(may 10th 2018) Updated the repository with the same content I added previously for the Catalog file, except this time the files are relative to the Daily Sales file.
 
 
 External references:
