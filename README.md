@@ -13,8 +13,11 @@ The "XML_HTML_CSS/manual_" .html and .css files were the files I wrote manually 
 
 TL;DR: to scrape the products you want and display its informations in a web browser, simply run "XML_HTML_CSS/gen_XML_to_HTMLandCSS.py" in the command line. Simply follow the instructions on the screen and the result will open automatically at the end.
 
-Here's a sample of the end result for the Catalog (recorded with Gyazo GIF): https://i.gyazo.com/0249feacda2da2c481f3cbdb7c97d81f.mp4 .
-And here's a sample of the end result for the Daily Sales (recorded with Gyazo GiF): https://i.gyazo.com/fbda911e1e6a45a30f84b4530643b0cd.mp4 .
+Here's a sample of the end result for the Catalog (recorded with Gyazo GIF): https://gyazo.com/b50f6d8ab3b7982fd35d9cab9e41051a.
+And here's a sample of the end result for the Daily Sales (recorded with Gyazo GiF): https://gyazo.com/1a144fb147c0899357f5ec1dc1b15603.
+
+You can also use this application online in repl.it, albeit with some slight changes for it to work with the platform: https://repl.it/@ze1598/Scrape-Worten-Application. Please due note the .html, .css, .xml and .dtd files are only written to once the application terminates.
+
 
 Update log:
 
@@ -24,6 +27,8 @@ Update log:
 
 -(may 10th 2018) Updated the repository with the same content I added previously for the Catalog file, except this time the files are relative to the Daily Sales file.
 
+-(may 12th 2018) Updated the files to have a more normalized in file naming but also in file structure. I have also added "XML_HTML_CSS/app_interface.py". You can use just the file because, has the name implies, it is an interface to use the application.
+
 
 External references:
 
@@ -32,3 +37,5 @@ External references:
 -Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
 -Requests: http://docs.python-requests.org/en/master/
+
+-Repl.it: https://repl.it/repls
