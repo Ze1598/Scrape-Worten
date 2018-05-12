@@ -13,13 +13,16 @@ The "XML_HTML_CSS/manual_" .html and .css files were the files I wrote manually 
 
 TL;DR: to scrape the products you want and display its informations in a web browser, simply run "XML_HTML_CSS/gen_XML_to_HTMLandCSS.py" in the command line. Simply follow the instructions on the screen and the result will open automatically at the end.
 
-Here's a sample of the end result (recorded with Gyazo GIF): https://i.gyazo.com/0249feacda2da2c481f3cbdb7c97d81f.mp4
+Here's a sample of the end result for the Catalog (recorded with Gyazo GIF): https://i.gyazo.com/0249feacda2da2c481f3cbdb7c97d81f.mp4 .
+And here's a sample of the end result for the Daily Sales (recorded with Gyazo GiF): https://i.gyazo.com/fbda911e1e6a45a30f84b4530643b0cd.mp4 .
 
 Update log:
 
 -(apr. 11th 2018) Created the repository, with all the necessary files for the first half of the project a.k.a. the XML and DTD half.
 
--(may 5th 2018) Updated the repository, with the .html and .css files, along with a .python script to create those files from the generated .xml file; Also updated the structure of the repository (everything is in a single folder)
+-(may 5th 2018) Updated the repository, with the .html and .css files, along with a .python script to create those files from the generated .xml file; Also updated the structure of the repository (everything is in a single folder).
+
+-(may 10th 2018) Updated the repository with the same content I added previously for the Catalog file, except this time the files are relative to the Daily Sales file.
 
 
 External references:
