@@ -1,17 +1,23 @@
 # -*- coding: iso-8859-15 -*-
 
-'''
-Take an .xml file, scrape information from it and
-generate an .html and .css files to represent that
-information. 
-Note this script is supposed to be run after
-'catalog.py'.
-'''
-
 from bs4 import BeautifulSoup
 import time
 
 def gen_html_css(xml_file):
+    '''
+    Take an .xml file, scrape information from it and
+    generate an .html and .css files to represent that
+    information. 
+    Note this script is supposed to be run after
+    'catalog.py'.
+    
+    Args:
+        xml_file (str): The name of the .xml file (in the
+    context of the application it'll be "catalog.xml").
+
+    Returns:
+        None
+    '''
     # Open the target .xml file
     with open(xml_file, 'r', encoding="iso-8859-15") as f:
         # Read all the content from the file at once
@@ -26,6 +32,12 @@ def gen_html_css(xml_file):
     # A list of all the products in the .xml
     prods = xml_soup.find_all('product')
     # Now extract the actual information from the XML we got from the file
+    # Scrape the date and title of the file (these will be the headers\
+    # for the web page)
+    file_title = 'Worten online store\'s catalog'
+    day, month, year = xml_soup.find('catalog')['day'], xml_soup.find('catalog')['month'], xml_soup.find('catalog')['year']
+    file_date = "/".join((day, month, year))
+
     # We are using lists to store the various informations so that we can\
     # cross a single product's data given the index of an item in a list
     # Product IDs
@@ -66,7 +78,7 @@ def gen_html_css(xml_file):
     # Create the .html
 
     # Create the HTML that will be written to an .html file at the end
-    html_string = '''<!DOCTYPE html>
+    html_string = f'''<!DOCTYPE html>
         <html>
             <head>
                 <title>Worten Daily Catalog</title>
@@ -74,6 +86,9 @@ def gen_html_css(xml_file):
             </head>
 
             <body>
+                <h1 id="top">Worten online store's catalog</h1>
+		        <h2 id="date">Date: {file_date}</h2>
+                <p class="file-ref"><a href="daily_sales.html" target="_blank">Open Daily Sales Report</a></p>
                 <div class="prod-ref" id="database">
                     <table class="database">
                         <tr>
@@ -130,157 +145,202 @@ def gen_html_css(xml_file):
 
 
     # Create the .css
-    css_string = '''body {
-        background: linear-gradient(135deg, #c7503b,#a80404);
-        font-family: Lato,sans-serif;
-    }
+    css_string = '''/* Use a gradient as the background for the whole page */
+body {
+	background: linear-gradient(135deg, #c7503b,#a80404);
+	font-family: Lato,sans-serif;
+}
+
+/* Adjust the padding for the headers  */
+#top, #date {
+    padding-left: 17px;
+}
+
+
+/* Style the paragraph with an anchor to the Catalog page */
+.file-ref {
+    border: 1px solid black;
+    text-align: center;
+    background-color: yellow;
+    font-size: 105%;
+    width: 15%;
+    padding: 5px;
+	font-weight: bold;
+	margin-left: 17px;
+}
+
+
+/* Top table */
+
+/* Move the product reference table a bit to the left */
+.prod-ref {
+	padding-left: 15px;
+}
+
+/* Format the table at the top of the page with a border. Collapse
+the borders so that there's no space in-between cells*/
+.database {
+	text-align: center;
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+/* Text to appear before the table */
+.prod-ref:before {
+	content: "List of catalog products";
+	display: block;
+	font-size: 200%;
+	margin-bottom: 10px;
+}
+
+/* Format the table headers and cells to have a border */
+.database th, .database td {
+	border: 1px solid black;
+}
+/* Table rows have white background */
+tr {
+	background-color: white;
+}
+/* When hovering over a row, that row's border becomes thicker */
+tr:hover {
+	border: 2px solid black;
+}
+/* Table even table rows have grey background */
+tr:nth-child(2n+2) {
+	background-color: #c5c5c5;
+}
+/* Table cells have 5px of padding in all directions */
+th, td {
+	padding: 5px;
+}
 
 
 
+/* Individual products */
 
-    .prod-ref {
-        padding-left: 15px;
-    }
+/* Change the background and border for each product */
+.prod {
+	background: linear-gradient(135deg, #46a3f0, #2036fc);
+	padding: 5px 5px 10px 10px;
+	margin: 15px;
+	border: 2px solid black;
+	width: 70%;
+}
 
-    .database {
-        text-align: center;
-        border: 2px solid black;
-        border-collapse: collapse;
-    }
+/* When hovering over a product, change its background and border */
+.prod:hover {
+	border: 5px solid black;
+	background: linear-gradient(135deg, #46f0b7, #007552);
+}
 
-    .prod-ref:before {
-        content: "List of catalog products";
-        display: block;
-        font-size: 200%;
-    }
+/* Make it so that the product's name is not as bold as the HTML makes it */
+.prod-name {
+	font-weight: lighter;
+}
 
-    .database th, .database td {
-        border: 1px solid black;
-    }
-    tr {
-        background-color: white;
-    }
-    tr:hover {
-        border: 2px solid black;
-    }
-    tr:nth-child(2n+2) {
-        background-color: #c5c5c5;
-    }
-    th, td {
-        padding: 5px;
-    }
+/* Format the availability part */
+.avail {
+	width: 20%;
+	padding: 3px;
+	border: 1px dotted #015a01;
+}
+.not-avail {
+	width: 25%;
+	padding: 3px;
+	border: 1px dotted grey;
+}
 
+/* Add text before the product id */
+.prod-id:before {
+	content: "Product ID: ";
+	font-size: 105%;
+	font-weight: bold;
+}
 
+/* Add information before the product description */
+.prod-desc:before {
+	content: "Product description: ";
+	display: block;
+	padding-bottom: 10px;
+	font-size: 110%;
+	font-weight: bold;
+}
 
+/* Add information before the product's extra information */
+.extra-info:before {
+	content: "More information: ";
+	display: block;
+	font-size: 110%;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
 
-    .prod {
-        background: linear-gradient(135deg, #46a3f0, #2036fc);
-        padding: 5px 5px 10px 10px;
-        margin: 15px;
-        border: 2px solid black;
-        width: 70%;
-    }
+/* Make the extra information text size bigger */
+.extra-info {
+	font-size: 105%;
+}
 
-    .prod:hover {
-        border: 5px solid black;
-        background: linear-gradient(135deg, #46f0b7, #007552);
-    }
-
-    .prod-name {
-        font-weight: lighter;
-    }
-
-    .avail {
-        width: 20%;
-        padding: 3px;
-        border: 1px dotted #015a01;
-    }
-    .not-avail {
-        width: 25%;
-        padding: 3px;
-        border: 1px dotted grey;
-    }
-
-    .prod-id:before {
-        content: "Product ID: ";
-        font-size: 105%;
-        font-weight: bold;
-    }
-
-    .prod-desc:before {
-        content: "Product description: ";
-        display: block;
-        padding-bottom: 10px;
-        font-size: 110%;
-        font-weight: bold;
-    }
-
-    .extra-info:before {
-        content: "More information: ";
-        display: block;
-        font-size: 110%;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .extra-info {
-        font-size: 105%;
-    }
-
-    .prod-info {
-        padding: 10px;
-    }
-    .prod-id {
-        font-size: 120%;
-    }
-    div img {
-        border: 3px solid grey;
-    }
-    .prod-desc {
-        padding: 10px;
-        text-align:justify;
-        width: 70%;
-    }
-    .extra-info {
-        border-collapse: collapse;
-        padding: 10px 10px 3px 10px;
-    }
+/* Adjust the padding for the various elements inside each product */
+.prod-info {
+	padding: 10px;
+}
+.prod-id {
+	font-size: 120%;
+}
+div img {
+	border: 3px solid grey;
+}
+.prod-desc {
+	padding: 10px;
+	text-align:justify;
+	width: 70%;
+}
+.extra-info {
+	border-collapse: collapse;
+	padding: 10px 10px 3px 10px;
+}
 
 
+/* Product tables */
 
-    .extra {
-        border-collapse: collapse;
-        border: 2px solid grey;
-        margin-bottom: 10px;
-    }
-    .extra tr {
-        border-bottom: 1px solid grey;
-        padding: 5px 5px 5px 10px;
-    }
-    .extra tr:hover {
-        border: 2px solid black;
-        padding: 5px;
-    }
+/* Format the table about a product's extra information */
+.extra {
+	border-collapse: collapse;
+	border: 2px solid grey;
+	margin-bottom: 10px;
+}
+.extra tr {
+	border-bottom: 1px solid grey;
+	padding: 5px 5px 5px 10px;
+}
+.extra tr:hover {
+	border: 2px solid black;
+	padding: 5px;
+}
 
-    .top {
-        width: 8%;
-        border: 1px solid #a1a14d;
-        background: yellow;
-        text-decoration: none;
-        text-align: center;
-        position: relative;
-        left: 850px;
-    }
+/* Format the Page Top anchor */
+.top {
+	width: 8%;
+	border: 1px solid #a1a14d;
+	background: yellow;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	left: 850px;
+}
 
-    .top:hover {
-        border: 2px solid #a1a14d;
-    }'''
+/* When hovering over the Page Top anchor, make its border thicker */
+.top:hover {
+	border: 2px solid #a1a14d;
+}'''
 
     with open('catalog.css', 'w') as f:
             f.write(css_string)
+    
+    return None
 
 if __name__ == '__main__':
-    start = time.time()
+    # start = time.time()
     gen_html_css('catalog.xml')
-    print('Your HTML and CSS have been generated.')
-    print('Elapsed time:', round(time.time()-start, 2), 'seconds.')
+    print('Your Catalog HTML and CSS have been generated.')
+    # print('Elapsed time:', round(time.time()-start, 2), 'seconds.')

@@ -1,145 +1,188 @@
+/* Use a gradient as the background for the whole page */
 body {
-        background: linear-gradient(135deg, #c7503b,#a80404);
-        font-family: Lato,sans-serif;
-    }
+	background: linear-gradient(135deg, #c7503b,#a80404);
+	font-family: Lato,sans-serif;
+}
+
+/* Adjust the padding for the headers  */
+#top, #date {
+    padding-left: 17px;
+}
+
+
+/* Style the paragraph with an anchor to the Catalog page */
+.file-ref {
+    border: 1px solid black;
+    text-align: center;
+    background-color: yellow;
+    font-size: 105%;
+    width: 15%;
+    padding: 5px;
+	font-weight: bold;
+	margin-left: 17px;
+}
+
+
+/* Top table */
+
+/* Move the product reference table a bit to the left */
+.prod-ref {
+	padding-left: 15px;
+}
+
+/* Format the table at the top of the page with a border. Collapse
+the borders so that there's no space in-between cells*/
+.database {
+	text-align: center;
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+/* Text to appear before the table */
+.prod-ref:before {
+	content: "List of catalog products";
+	display: block;
+	font-size: 200%;
+	margin-bottom: 10px;
+}
+
+/* Format the table headers and cells to have a border */
+.database th, .database td {
+	border: 1px solid black;
+}
+/* Table rows have white background */
+tr {
+	background-color: white;
+}
+/* When hovering over a row, that row's border becomes thicker */
+tr:hover {
+	border: 2px solid black;
+}
+/* Table even table rows have grey background */
+tr:nth-child(2n+2) {
+	background-color: #c5c5c5;
+}
+/* Table cells have 5px of padding in all directions */
+th, td {
+	padding: 5px;
+}
 
 
 
+/* Individual products */
 
-    .prod-ref {
-        padding-left: 15px;
-    }
+/* Change the background and border for each product */
+.prod {
+	background: linear-gradient(135deg, #46a3f0, #2036fc);
+	padding: 5px 5px 10px 10px;
+	margin: 15px;
+	border: 2px solid black;
+	width: 70%;
+}
 
-    .database {
-        text-align: center;
-        border: 2px solid black;
-        border-collapse: collapse;
-    }
+/* When hovering over a product, change its background and border */
+.prod:hover {
+	border: 5px solid black;
+	background: linear-gradient(135deg, #46f0b7, #007552);
+}
 
-    .prod-ref:before {
-        content: "List of catalog products";
-        display: block;
-        font-size: 200%;
-    }
+/* Make it so that the product's name is not as bold as the HTML makes it */
+.prod-name {
+	font-weight: lighter;
+}
 
-    .database th, .database td {
-        border: 1px solid black;
-    }
-    tr {
-        background-color: white;
-    }
-    tr:hover {
-        border: 2px solid black;
-    }
-    tr:nth-child(2n+2) {
-        background-color: #c5c5c5;
-    }
-    th, td {
-        padding: 5px;
-    }
+/* Format the availability part */
+.avail {
+	width: 20%;
+	padding: 3px;
+	border: 1px dotted #015a01;
+}
+.not-avail {
+	width: 25%;
+	padding: 3px;
+	border: 1px dotted grey;
+}
 
+/* Add text before the product id */
+.prod-id:before {
+	content: "Product ID: ";
+	font-size: 105%;
+	font-weight: bold;
+}
 
+/* Add information before the product description */
+.prod-desc:before {
+	content: "Product description: ";
+	display: block;
+	padding-bottom: 10px;
+	font-size: 110%;
+	font-weight: bold;
+}
 
+/* Add information before the product's extra information */
+.extra-info:before {
+	content: "More information: ";
+	display: block;
+	font-size: 110%;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
 
-    .prod {
-        background: linear-gradient(135deg, #46a3f0, #2036fc);
-        padding: 5px 5px 10px 10px;
-        margin: 15px;
-        border: 2px solid black;
-        width: 70%;
-    }
+/* Make the extra information text size bigger */
+.extra-info {
+	font-size: 105%;
+}
 
-    .prod:hover {
-        border: 5px solid black;
-        background: linear-gradient(135deg, #46f0b7, #007552);
-    }
-
-    .prod-name {
-        font-weight: lighter;
-    }
-
-    .avail {
-        width: 20%;
-        padding: 3px;
-        border: 1px dotted #015a01;
-    }
-    .not-avail {
-        width: 25%;
-        padding: 3px;
-        border: 1px dotted grey;
-    }
-
-    .prod-id:before {
-        content: "Product ID: ";
-        font-size: 105%;
-        font-weight: bold;
-    }
-
-    .prod-desc:before {
-        content: "Product description: ";
-        display: block;
-        padding-bottom: 10px;
-        font-size: 110%;
-        font-weight: bold;
-    }
-
-    .extra-info:before {
-        content: "More information: ";
-        display: block;
-        font-size: 110%;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .extra-info {
-        font-size: 105%;
-    }
-
-    .prod-info {
-        padding: 10px;
-    }
-    .prod-id {
-        font-size: 120%;
-    }
-    div img {
-        border: 3px solid grey;
-    }
-    .prod-desc {
-        padding: 10px;
-        text-align:justify;
-        width: 70%;
-    }
-    .extra-info {
-        border-collapse: collapse;
-        padding: 10px 10px 3px 10px;
-    }
+/* Adjust the padding for the various elements inside each product */
+.prod-info {
+	padding: 10px;
+}
+.prod-id {
+	font-size: 120%;
+}
+div img {
+	border: 3px solid grey;
+}
+.prod-desc {
+	padding: 10px;
+	text-align:justify;
+	width: 70%;
+}
+.extra-info {
+	border-collapse: collapse;
+	padding: 10px 10px 3px 10px;
+}
 
 
+/* Product tables */
 
-    .extra {
-        border-collapse: collapse;
-        border: 2px solid grey;
-        margin-bottom: 10px;
-    }
-    .extra tr {
-        border-bottom: 1px solid grey;
-        padding: 5px 5px 5px 10px;
-    }
-    .extra tr:hover {
-        border: 2px solid black;
-        padding: 5px;
-    }
+/* Format the table about a product's extra information */
+.extra {
+	border-collapse: collapse;
+	border: 2px solid grey;
+	margin-bottom: 10px;
+}
+.extra tr {
+	border-bottom: 1px solid grey;
+	padding: 5px 5px 5px 10px;
+}
+.extra tr:hover {
+	border: 2px solid black;
+	padding: 5px;
+}
 
-    .top {
-        width: 8%;
-        border: 1px solid #a1a14d;
-        background: yellow;
-        text-decoration: none;
-        text-align: center;
-        position: relative;
-        left: 850px;
-    }
+/* Format the Page Top anchor */
+.top {
+	width: 8%;
+	border: 1px solid #a1a14d;
+	background: yellow;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	left: 850px;
+}
 
-    .top:hover {
-        border: 2px solid #a1a14d;
-    }
+/* When hovering over the Page Top anchor, make its border thicker */
+.top:hover {
+	border: 2px solid #a1a14d;
+}

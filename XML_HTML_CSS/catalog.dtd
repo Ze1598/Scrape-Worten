@@ -8,7 +8,10 @@
 <!ELEMENT extra_info (info+)>
 <!ELEMENT info (#PCDATA)>
 
-<!ATTLIST catalog store CDATA #REQUIRED>
+<!ATTLIST catalog day CDATA #REQUIRED
+				month CDATA #REQUIRED
+				year CDATA #REQUIRED
+				store CDATA #REQUIRED>
 <!ATTLIST product id ID #REQUIRED
 				avail CDATA #REQUIRED
 				link CDATA #REQUIRED>

@@ -4,10 +4,24 @@ body {
 	font-family: Lato,sans-serif;
 }
 
+/* Adjust the padding for the headers  */
+#top, #date {
+    margin-top: 17px;
+    padding-left: 17px;
+}
 
-/* Leave a bigger margin at the bottom of the page headers */
-.file-header {
-    margin-bottom: 75px;
+
+/* Style the paragraph with an anchor to the Catalog page */
+.file-ref {
+    border: 1px solid black;
+    text-align: center;
+    background-color: yellow;
+    font-size: 105%;
+    width: 10%;
+    padding: 5px;
+    font-weight: bold;
+    position: relative;
+    right: -1175px;
 }
 
 

@@ -93,7 +93,8 @@ def gen_html_css(xml_file):
         <body>'''
     # Create the page title's and the first table (these are also always the same)
     html_string += f'\n\t\t<h1 id="top">{file_title}</h1>' +\
-    f'\n\t\t<h2>Date: {file_date}</h2>' +\
+    f'\n\t\t<h2 id="date">Date: {file_date}</h2>' +\
+    f'\n\t\t<p class="file-ref"><a href="catalog.html" target="_blank">Open Catatalog</a></p>' +\
     f'''\n\n\t\t<div class="first-table">
                 <h2>Tables' Summary</h2>
                 <table class="table-summary">
@@ -228,135 +229,173 @@ def gen_html_css(xml_file):
 
 
     # Create the CSS
-    css_string = '''body {
-        background: linear-gradient(135deg, #c7503b,#a80404);
-        font-family: Lato,sans-serif;
-    }
+    css_string = '''/* Use a gradient as the background for the whole page */
+body {
+    background: linear-gradient(135deg, #c7503b,#a80404);
+    font-family: Lato,sans-serif;
+}
+
+/* Adjust the padding for the headers  */
+#top, #date {
+    margin-top: 17px;
+    padding-left: 17px;
+}
 
 
-    .file-header {
-        margin-bottom: 75px;
-    }
+/* Style the paragraph with an anchor to the Catalog page */
+.file-ref {
+    border: 1px solid black;
+    text-align: center;
+    background-color: yellow;
+    font-size: 105%;
+    width: 10%;
+    padding: 5px;
+    font-weight: bold;
+    position: relative;
+    right: -1175px;
+}
 
 
-    tr:hover {
-        border: 2px solid black;
-    }
+/* Make the a row thicker when hovering over it. This applies
+    to any table */
+tr:hover {
+    border: 2px solid black;
+}
 
 
-    li {
-        padding-right: 25px;
-        list-style-type: none;
-    }
+/* The type of bullet used for list items is 'none'. Also add
+    an extra 25px of padding to their right side */
+li {
+    padding-right: 25px;
+    list-style-type: none;
+}
 
 
-    div {
-        background: linear-gradient(135deg, #46a3f0, #2036fc);
-        padding: 5px 5px 10px 10px;
-        margin: 15px;
-        border: 2px solid black;
-    }
-    div:hover {
-        border: 3px solid black;
-        background: linear-gradient(135deg, #46f0b7, #007552);
-    }
+/* Format each div, knowing that each div contains one table and a
+    "Page Top" anchor */
+div {
+    background: linear-gradient(135deg, #46a3f0, #2036fc);
+    padding: 5px 5px 10px 10px;
+    margin: 15px;
+    border: 2px solid black;
+}
+/* When hovering over a div, change its background and border */
+div:hover {
+    border: 3px solid black;
+    background: linear-gradient(135deg, #46f0b7, #007552);
+}
 
 
-    .table-summary {
-        border-collapse: collapse;
-        text-align: center;
-        border: 2px solid black;
-        background-color: white;
-        color: black;
-    }
-    .table-summary th {
-        border: 1px solid black;
-    }
+/* Format the first table's borders */
+.table-summary {
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+.table-summary th {
+    border: 1px solid black;
+}
 
 
-    #clients-sales {
-        border-collapse: collapse;
-        text-align: center;
-        border: 2px solid black;
-        background-color: white;
-        color: black;
-    }
-    #clients-sales th, #clients-sales td {
-        border: 1px solid black;
-        padding: 5px;
-    }
-    #clients-sales tr:nth-child(2n+2) {
-        background-color: #c5c5c5;
-    }
+/* Format the Clients/Sales table */
+#clients-sales {
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+#clients-sales th, #clients-sales td {
+    border: 1px solid black;
+    padding: 5px;
+}
+/* The even rows will have a different background
+    color */
+#clients-sales tr:nth-child(2n+2) {
+    background-color: #c5c5c5;
+}
 
 
-    #clients {
-        border-collapse: collapse;
-        text-align: center;
-        border: 2px solid black;
-        background-color: white;
-        color: black;
-    }
-    #clients th, #clients td {
-        border: 1px solid black;
-        padding: 5px;
-    }
-    #clients tr:nth-child(2n+2) {
-        background-color: #c5c5c5;
-    }
+/* Format the Clients table */
+#clients {
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+#clients th, #clients td {
+    border: 1px solid black;
+    padding: 5px;
+}
+/* The even rows will have a different background
+    color */
+#clients tr:nth-child(2n+2) {
+    background-color: #c5c5c5;
+}
 
 
-    #sales {
-        border-collapse: collapse;
-        text-align: center;
-        border: 2px solid black;
-        background-color: white;
-        color: black;
-    }
-    #sales th, #sales td {
-        border: 1px solid black;
-        padding: 5px;
-    }
-    #sales tr:nth-child(2n+2) {
-        background-color: #c5c5c5;
-    }
+/* Format the Sales table */
+#sales {
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+#sales th, #sales td {
+    border: 1px solid black;
+    padding: 5px;
+}
+/* The even rows will have a different background
+    color */
+#sales tr:nth-child(2n+2) {
+    background-color: #c5c5c5;
+}
 
 
-    #products {
-        border-collapse: collapse;
-        text-align: center;
-        border: 2px solid black;
-        background-color: white;
-        color: black;
-    }
-    #products th, #products td {
-        border: 1px solid black;
-        padding: 5px;
-    }
-    #products tr:nth-child(2n+2) {
-        background-color: #c5c5c5;
-    }
+/* Format the Products table */
+#products {
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+#products th, #products td {
+    border: 1px solid black;
+    padding: 5px;
+}
+/* The even rows will have a different background
+    color */
+#products tr:nth-child(2n+2) {
+    background-color: #c5c5c5;
+}
 
 
-    .top {
-        width: 8%;
-        border: 1px solid #a1a14d;
-        background: yellow;
-        text-decoration: none;
-        text-align: center;
-        position: relative;
-        left: 1150px;
-    }
-    .top:hover {
-        border: 2px solid #a1a14d;
-    }'''
+/* Format the Page Top anchor */
+.top {
+    width: 8%;
+    border: 1px solid #a1a14d;
+    background: yellow;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    left: 1150px;
+}
+/* When hovering over the "Page Top" anchor, make its border thicker */
+.top:hover {
+    border: 2px solid #a1a14d;
+}'''
 
     # Write the CSS to a .css file
     with open('daily_sales.css', 'w') as f:
         f.write(css_string)
 
 if __name__ == '__main__':
-    start = time.time()
+    # start = time.time()
     gen_html_css('daily_sales.xml')
-    print('Your HTML and CSS have been generated.')
-    print('Elapsed time:', round(time.time()-start, 2), 'seconds.')
+    print('Your Daily Sales HTML and CSS have been generated.')
+    # print('Elapsed time:', round(time.time()-start, 2), 'seconds.')

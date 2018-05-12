@@ -1,19 +1,22 @@
-'''Make queries to worten.pt and scrape the first product result.
-Scrape information about that product and its page, then save
-the information to an .xml file.
-The XML structure is written in english, but the scraped 
-information itself is written in portuguese, since it is scraped 
-from a portuguese website.'''
-
 # http://docs.python-requests.org/en/master/
 from requests import post, get
 # https://beautiful-soup-4.readthedocs.io/en/latest/
 from bs4 import BeautifulSoup
 from time import time
-from os import startfile
 from random import randint
 
 def scrape(args):
+    '''
+    Make a query to worten.pt. Then open the page of the
+    result and scrape information about it. The function will
+    return a string with xml about that page (product).
+
+    Args:
+        args (str): the query parameters.
+    
+    Returns:
+        xml_text (str): a string with XML about the scraped product page.
+    '''
 
     # Use a try/except clause in case something goes wrong with\
     # the GET requests or the creation of the BeautifulSoup\
@@ -160,7 +163,7 @@ def scrape(args):
     # availability
     prod_stock = 0 if prod_avail == 'Out of stock' else randint(1, 100)
 
-
+    '''
     # Create a single string to contain all the scraped info, to be saved in a .txt file
     txt_text = f'Title of the product found: {prod_name}\n' +\
     f'Link to the product\'s page: {prod_link}\n' +\
@@ -175,6 +178,7 @@ def scrape(args):
     f'Product dimensions: {prod_dimensions}\n' +\
     f'Product color: {prod_color}\n' +\
     f'Product stock: {prod_stock}' + '\n\n\n'
+    '''
 
     # Create a single string to contain all the scraped info, to be save in a .xml file
     xml_text = f'\n\n\t<product id="{prod_ref}" avail="{prod_avail}" link="{prod_link}">'+\
@@ -195,65 +199,105 @@ def scrape(args):
     xml_text += f'\n\t\t</extra_info>' +\
     f'\n\t</product>\n'
 
-    # Return a list with 2 elements: the formatted text string\
-    # that will be saved to the .txt file and the formatted
-    # XML string that will be saved to the .xml file
-    return [txt_text, xml_text]
+    return xml_text
 
 
 
-# arg = 'nintendo switch'
-arg = 'asus'
-# scrape(arg)
+def write_xml():
+    '''
+    Call the scrape function to scrape product pages on worten.pt. This
+    function is responsible for receiving input from the user about what
+    queries to make, along with organizing the XML strings.
 
-# The beginning of the .xml, with the header, .dtd location and root element
-xml_string = '''<?xml version="1.0" encoding="iso-8859-15" ?>
-<!DOCTYPE catalog SYSTEM "catalog.dtd">
-<catalog store="Worten">'''
+    Args:
+        None
+    
+    Returns:
+        scraped (str): a string with XML.
+    '''
 
-# '''
-if __name__ == "__main__":
+    # Will hold XML for the scraped products
+    scraped = ''''''
+    # Initialize as True to run the loop, but it will be a string when used
+    arg = True
+
     # Counter to keep track of how many times the main function\
     # returned prematurely
     error_count = 0
-    with open('scraped_products.txt', 'w', encoding='iso-8859-15') as f:
-        while arg:
-            # Time how long it takes to run each iteration of the loop
-            start = time()
-            # Ask the user for the tags to be searched for
-            arg = input('Enter tags for the query (enter nothing to finish scraping products): ')
-            # If the user entered a valid input (if not the\
-            # loop will be terminated in the next iteration)
-            if arg:
-                scrape_results = scrape(arg)
-                # If the function was executed without\
-                # raising exceptions, then write the returned info\
-                # to a .txt file and organize the XML-string to be\
-                # written to an .xml file
-                if scrape_results:
-                    f.write(scrape_results[0])
-                    xml_string += scrape_results[1]
-                    print('The product has been scraped.')
-                    print('Elapsed time:', round(time()-start, 2), 'seconds.')
-                    print()
-                # If it raised exceptions (specifically in the GET requests,\
-                # move on to the next iteration of the loop a.k.a. ask for new\
-                # input)
-                else:
-                    print('Oops, something went wrong. Please try again.')
-                    error_count += 1
-                    # If the main function returned prematurely three times
-                    if error_count == 3:
-                        print('It\'s the third time the script can\'t retrieve information properly.')
-                        # Assign 'arg' to be an empty string so that the loop will terminate
-                        arg = ''
-        else:
-            xml_string += '\n</catalog>'
-            print()
-            print('The script has finished.')
+    while arg:
+        # Time how long it takes to run each iteration of the loop
+        start = time()
+        # Ask the user for the tags to be searched for
+        arg = input('Enter tags for the query (enter nothing to finish scraping products): ')
+        # If the user entered a valid input (if not the\
+        # loop will be terminated in the next iteration)
+        if arg:
+            # If the function was executed without\
+            # raising exceptions, then write the returned info\
+            # to a .txt file and organize the XML-string to be\
+            # written to an .xml file
+            scrape_results = scrape(arg)
+            if scrape_results:
+                scraped += scrape_results
+                print('The product has been scraped.')
+                # print('Elapsed time:', round(time()-start, 2), 'seconds.')
+                print()
+            # If it raised exceptions (specifically in the GET requests,\
+            # move on to the next iteration of the loop a.k.a. ask for new\
+            # input)
+            else:
+                print('Oops, something went wrong. Please try again.')
+                error_count += 1
+                # If the main function returned prematurely three times
+                if error_count == 3:
+                    print('It\'s the third time the script can\'t retrieve information properly.')
+                    # Assign 'arg' to be an empty string so that the loop will terminate
+                    arg = ''
+    else:
+        scraped += '\n</catalog>'
+        print()
+    return scraped
+
+
+
+if __name__ == '__main__':
+    # The beginning of the .xml, with the header, .dtd location and root element
+    xml_string = f'''<?xml version="1.0" encoding="iso-8859-15" ?>
+<!DOCTYPE catalog SYSTEM "catalog.dtd">
+<catalog day="{randint(1,31)}" month="{randint(1,12)}" year="2018" store="Worten">'''
+
+    # This will prompt the user for tags for the queries, scrape the information\
+    # and return it as XML in a string
+    xml_string += write_xml()
 
     # Write the formatted string with XML to the .xml file
     with open('catalog.xml', 'w', encoding="iso-8859-15") as f:
         f.write(xml_string)
+
+    # The data to be written to the .dtd file that will validate the .xml
+    dtd_string = '''<!ELEMENT catalog (product+)>
+<!ELEMENT product (name, pu, images, description, extra_info)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT pu (#PCDATA)>
+<!ELEMENT images (image+)>
+<!ELEMENT image EMPTY>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT extra_info (info+)>
+<!ELEMENT info (#PCDATA)>
+
+<!ATTLIST catalog day CDATA #REQUIRED
+				month CDATA #REQUIRED
+				year CDATA #REQUIRED
+				store CDATA #REQUIRED>
+<!ATTLIST product id ID #REQUIRED
+				avail CDATA #REQUIRED
+				link CDATA #REQUIRED>
+<!ATTLIST link ref CDATA #REQUIRED>
+<!ATTLIST image ref CDATA #REQUIRED>
+<!ATTLIST info type CDATA #REQUIRED>'''
+
+    # Create and write to the .dtd
+    with open('catalog.dtd', 'w') as f:
+        f.write(dtd_string)
     
-# '''
+    print('The catalog has been created.\n')

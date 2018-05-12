@@ -4,6 +4,23 @@ body {
 	font-family: Lato,sans-serif;
 }
 
+/* Adjust the padding for the headers  */
+#top, #date {
+    padding-left: 17px;
+}
+
+
+/* Style the paragraph with an anchor to the Catalog page */
+.file-ref {
+    border: 1px solid black;
+    text-align: center;
+    background-color: yellow;
+    font-size: 105%;
+    width: 15%;
+    padding: 5px;
+	font-weight: bold;
+	margin-left: 17px;
+}
 
 
 /* Top table */
@@ -26,6 +43,7 @@ the borders so that there's no space in-between cells*/
 	content: "List of catalog products";
 	display: block;
 	font-size: 200%;
+	margin-bottom: 10px;
 }
 
 /* Format the table headers and cells to have a border */
