@@ -4,14 +4,13 @@ A project that revolves around scraping information from worten.pt, saving it to
 
 The first half of the project consists in scraping the information about products that result from a query to worten.pt, then saving that information to an .xml file, which is validated by the corresponding .dtd file.
 
-For the second half, I present the information in the .xml file graphically, using HTML and CSS.
+For the second half, I present the information in the .xml file graphically, using HTML and CSS, for both the catalog and the daily sales.
 
 The "XML_HTML_CSS/catalog" files are about the mini-catalog created with the scraped products' informations.
 The "XML_HTML_CSS/daily_sales" files are about the informations pertaining the daily sales of the online store. All the information on those files is randomly generated from "sample_citizen_data.txt" file and thus fake.
-The "XML_HTML_CSS/manual_" .html and .css files were the files I wrote manually at first to know what I wanted the end result to look like. From that point, I worked on automating the creation of those files, which resulted in "XML_HTML_CSS/generate_HTML_CSS.py". This file reads the contents of "catalog.xml" and generates an .html and a .css file to display its contents in a web browser.
-"XML_HTML_CSS/gen_XML_to_HTMLandCSS.py" is a file intended (like the other Python files) to be ran in the command line. Running this script simply runs the other two Python scripts, "XML_HTML_CSS/catalog.py" to scrape products from worten.pt and "XML_HTML_CSS/generate_HTML_CSS.py" to generate the HTML and CSS.
+The "XML_HTML_CSS/manual_" .html and .css files were the files I wrote manually at first to know what I wanted the end result to look like. From that point, I worked on automating the creation of those files, which resulted in the "XML_HTML_CSS/gen" python scripts.
 
-TL;DR: to scrape the products you want and display its informations in a web browser, simply run "XML_HTML_CSS/gen_XML_to_HTMLandCSS.py" in the command line. Simply follow the instructions on the screen and the result will open automatically at the end.
+TL;DR: to scrape the products you want and display its informations in a web browser, simply run "XML_HTML_CSS/app_interface.py" in the command line. Simply follow the instructions on the screen and the result will open automatically at the end.
 
 Here's a sample of the end result for the Catalog (recorded with Gyazo GIF): https://gyazo.com/b50f6d8ab3b7982fd35d9cab9e41051a.
 And here's a sample of the end result for the Daily Sales (recorded with Gyazo GiF): https://gyazo.com/1a144fb147c0899357f5ec1dc1b15603.
