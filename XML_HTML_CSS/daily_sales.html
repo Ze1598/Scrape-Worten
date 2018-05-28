@@ -1,259 +1,274 @@
 <!DOCTYPE html>
-    <html>
+<html>
+<head>
+    <title>Worten Daily Sales</title>
+    <link href="daily_sales.css" type="text/css" rel="stylesheet" />
+</head>
 
-        <head>
-            <title>Worten Daily Sales</title>
-            <link href="daily_sales.css" type="text/css" rel="stylesheet" />
-        </head>
+<body>
+    <h1 id="top">Worten online store's daily sales report</h1>
+    <h2 id="date">Date: 29/1/2018</h2>
+    <p class="file-ref"><a href="catalog.html">Open Catatalog</a></p>
+    <p><a href="auth.html" id="log-out">Log Out</a></p>
 
-        <body>
-		<h1 id="top">Worten online store's daily sales report</h1>
-		<h2 id="date">Date: 29/1/2018</h2>
-		<p class="file-ref"><a href="catalog.html" target="_blank">Open Catatalog</a></p>
+    <div class="first-table">
+        <h2>Tables' Summary</h2>
+        <table class="table-summary">
+            <tr>
+                <th><a href="#clients-sales">Clients/Sales</a></th>
+                <th><a href="#clients">Clients</a></th>
+                <th><a href="#sales">Sales</a></th>
+                <th><a href="#products">Products</a></th>
+            </tr>
+        </table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>
 
-		<div class="first-table">
-                <h2>Tables' Summary</h2>
-                <table class="table-summary">
-                    <tr>
-                        <th><a href="#clients-sales">Clients/Sales</a></th>
-                        <th><a href="#clients">Clients</a></th>
-                        <th><a href="#sales">Sales</a></th>
-                        <th><a href="#products">Products</a></th>
-                    </tr>
-                </table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>
+    <div class="second-table">
+        <h2>Clients/Sales' Table</h2>
+        <table id="clients-sales">
+            <tr>
+                <th>Client ID</th>
+                <th>Sale ID</th>
+                <th>Subtotal</th>
+                <th>Shipping</th>
+                <th>Final Price</th>
+            </tr>
 
-		<div class="second-table">
-                <h2>Clients/Sales' Table</h2>
-                <table id="clients-sales">
-                    <tr>
-                        <th>Client ID</th>
-                        <th>Sale ID</th>
-                        <th>Subtotal</th>
-                        <th>Shipping</th>
-                        <th>Final Price</th>
-                    </tr>
-				<tr>
-                        <td><a href="#C1">C1</a></td>
-                        <td><a href="#S1">S1</a></td>
-                        <td>€9890.0</td>
-                        <td>€25.0</td>
-                        <td>€9915.0</td>
-                    </tr>
-				<tr>
-                        <td><a href="#C4">C4</a></td>
-                        <td><a href="#S2">S2</a></td>
-                        <td>€4230.0</td>
-                        <td>€15.0</td>
-                        <td>€4245.0</td>
-                    </tr>
-				<tr>
-                        <td><a href="#C1">C1</a></td>
-                        <td><a href="#S3">S3</a></td>
-                        <td>€976.0</td>
-                        <td>€52.5</td>
-                        <td>€1028.5</td>
-                    </tr>
-				<tr>
-                        <td><a href="#C2">C2</a></td>
-                        <td><a href="#S4">S4</a></td>
-                        <td>€4842.0</td>
-                        <td>€22.5</td>
-                        <td>€4864.5</td>
-                    </tr>
-				<tr>
-                        <td><a href="#C2">C2</a></td>
-                        <td><a href="#S5">S5</a></td>
-                        <td>€1589.0</td>
-                        <td>€40.0</td>
-                        <td>€1629.0</td>
-                    </tr>
-			</table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>
+			<tr>
+                <td><a href="#C2">C2</a></td>
+                <td><a href="#S1">S1</a></td>
+                <td>€2863.0</td>
+                <td>€37.5</td>
+                <td>€2900.5</td>
+            </tr>
+			<tr>
+                <td><a href="#C1">C1</a></td>
+                <td><a href="#S2">S2</a></td>
+                <td>€1107.0</td>
+                <td>€2.5</td>
+                <td>€1109.5</td>
+            </tr>
+			<tr>
+                <td><a href="#C3">C3</a></td>
+                <td><a href="#S3">S3</a></td>
+                <td>€1151.0</td>
+                <td>€7.5</td>
+                <td>€1158.5</td>
+            </tr>
+			<tr>
+                <td><a href="#C1">C1</a></td>
+                <td><a href="#S4">S4</a></td>
+                <td>€4925.0</td>
+                <td>€42.5</td>
+                <td>€4967.5</td>
+            </tr>
+			<tr>
+                <td><a href="#C5">C5</a></td>
+                <td><a href="#S5">S5</a></td>
+                <td>€5476.0</td>
+                <td>€10.0</td>
+                <td>€5486.0</td>
+            </tr>
+		</table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>
 
-		<div class="third-table">
-                <h2>Client's Table</h2>
-                <table id="clients">
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>TIN</th>
-                        <th>Locality</th>
-                        <th>Address</th>
-                        <th>Phone Number</th>
-                        <th>E-mail</th>
-                    </tr>
-				<tr>
-                        <td id="C1">C1</td>
-                        <td>Eric Harris</td>
-                        <td>342329423</td>
-                        <td>X</td>
-                        <td>826 Elm St., Epicburg NE 10671</td>
-                        <td>127-555-1867</td>
-                        <td>eric_harris@email.com</td>
-                    </tr>
-				<tr>
-                        <td id="C2">C2</td>
-                        <td>Erik Stuart</td>
-                        <td>244992168</td>
-                        <td>R</td>
-                        <td>884 High St., Braavos ME 43597</td>
-                        <td>800-555-6089</td>
-                        <td>erik_stuart@email.com</td>
-                    </tr>
-				<tr>
-                        <td id="C4">C4</td>
-                        <td>Jennifer Davis</td>
-                        <td>124120204</td>
-                        <td>P</td>
-                        <td>806 1st St., Faketown AK 86847</td>
-                        <td>777-555-8378</td>
-                        <td>jennifer_davis@email.com</td>
-                    </tr>
-			</table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>
+	<div class="third-table">
+        <h2>Client's Table</h2>
+        <table id="clients">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>TIN</th>
+                <th>Locality</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>E-mail</th>
+            </tr>
+			<tr>
+                <td id="C1">C1</td>
+                <td>Eric Williams</td>
+                <td>891031672</td>
+                <td>N</td>
+                <td>391 High St., Smalltown WY 28362</td>
+                <td>292-555-1875</td>
+                <td>eric_williams@email.com</td>
+            </tr>
+			<tr>
+                <td id="C2">C2</td>
+                <td>Barbara Williams</td>
+                <td>730394043</td>
+                <td>H</td>
+                <td>607 Washington St., Blackwater NH 97183</td>
+                <td>608-555-4938</td>
+                <td>barbara_williams@email.com</td>
+            </tr>
+			<tr>
+                <td id="C3">C3</td>
+                <td>Jennifer Martin</td>
+                <td>946224132</td>
+                <td>R</td>
+                <td>121 Hill St., Braavos UT 92474</td>
+                <td>880-555-8319</td>
+                <td>jennifer_martin@email.com</td>
+            </tr>
+			<tr>
+                <td id="C5">C5</td>
+                <td>Dave Martin</td>
+                <td>932484853</td>
+                <td>C</td>
+                <td>173 Main St., Springfield RI 55924</td>
+                <td>614-555-1166</td>
+                <td>dave_martin@email.com</td>
+            </tr>
+		</table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>
 
-		<div class="fourth-table">
-                <h2>Sales' Table</h2>
-                <table id="sales">
-                    <tr>
-                        <th>Sale ID</th>
-                        <th>Client ID</th>
-                        <th>Product IDs/<br>Quantities</th>
-                        <th>Subtotal</th>
-                        <th>Shipping</th>
-                        <th>Final Price</th>
-                        <th>Delivery Address</th>
-                        <th>Invoice Address</th>
-                    </tr>
-				<tr>
-                        <td id="S1">S1</td>
-                        <td><a href="#C1">C1</a></td>
-                        <td>
-                            <ul>
-							<li>P6030697 / 10</li>
-						</ul>
-                        </td>
-                        <td>€9890.0</td>
-                        <td>€25.0</td>
-                        <td>€9915.0</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-				<tr>
-                        <td id="S2">S2</td>
-                        <td><a href="#C4">C4</a></td>
-                        <td>
-                            <ul>
-							<li>P4988296 / 1</li>
-							<li>P2716640 / 5</li>
-						</ul>
-                        </td>
-                        <td>€4230.0</td>
-                        <td>€15.0</td>
-                        <td>€4245.0</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-				<tr>
-                        <td id="S3">S3</td>
-                        <td><a href="#C1">C1</a></td>
-                        <td>
-                            <ul>
-							<li>P1504840 / 5</li>
-							<li>P6064844 / 8</li>
-							<li>P1190460 / 8</li>
-						</ul>
-                        </td>
-                        <td>€976.0</td>
-                        <td>€52.5</td>
-                        <td>€1028.5</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-				<tr>
-                        <td id="S4">S4</td>
-                        <td><a href="#C2">C2</a></td>
-                        <td>
-                            <ul>
-							<li>P9841183 / 9</li>
-						</ul>
-                        </td>
-                        <td>€4842.0</td>
-                        <td>€22.5</td>
-                        <td>€4864.5</td>
-                        <td>607 Washington St., Blackwater NH 97183</td>
-                        <td></td>
-                    </tr>
-				<tr>
-                        <td id="S5">S5</td>
-                        <td><a href="#C2">C2</a></td>
-                        <td>
-                            <ul>
-							<li>P1670055 / 9</li>
-							<li>P4065182 / 7</li>
-						</ul>
-                        </td>
-                        <td>€1589.0</td>
-                        <td>€40.0</td>
-                        <td>€1629.0</td>
-                        <td>519 Washington St., Olympus TN 32425</td>
-                        <td>625 Oak St., Dawnstar IL 61914</td>
-                    </tr>
-			</table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>
+	<div class="fourth-table">
+        <h2>Sales' Table</h2>
+        <table id="sales">
+            <tr>
+                <th>Sale ID</th>
+                <th>Client ID</th>
+                <th>Product IDs/<br>Quantities</th>
+                <th>Subtotal</th>
+                <th>Shipping</th>
+                <th>Final Price</th>
+                <th>Delivery Address</th>
+                <th>Invoice Address</th>
+            </tr>
+			<tr>
+                <td id="S1">S1</td>
+                <td><a href="#C2">C2</a></td>
+                <td>
+                    <ul>
+						<li>P5189303 / 6</li>
+						<li>P4120193 / 2</li>
+						<li>P8741763 / 7</li>
+					</ul>
+                </td>
+                <td>€2863.0</td>
+                <td>€37.5</td>
+                <td>€2900.5</td>
+                <td></td>
+                <td></td>
+            </tr>
+			<tr>
+                <td id="S2">S2</td>
+                <td><a href="#C1">C1</a></td>
+                <td>
+                    <ul>
+						<li>P1923800 / 1</li>
+					</ul>
+                </td>
+                <td>€1107.0</td>
+                <td>€2.5</td>
+                <td>€1109.5</td>
+                <td></td>
+                <td></td>
+            </tr>
+			<tr>
+                <td id="S3">S3</td>
+                <td><a href="#C3">C3</a></td>
+                <td>
+                    <ul>
+						<li>P8132060 / 2</li>
+						<li>P4141540 / 1</li>
+					</ul>
+                </td>
+                <td>€1151.0</td>
+                <td>€7.5</td>
+                <td>€1158.5</td>
+                <td></td>
+                <td>625 Oak St., Dawnstar IL 61914</td>
+            </tr>
+			<tr>
+                <td id="S4">S4</td>
+                <td><a href="#C1">C1</a></td>
+                <td>
+                    <ul>
+						<li>P3717137 / 6</li>
+						<li>P3362711 / 6</li>
+						<li>P2208364 / 5</li>
+					</ul>
+                </td>
+                <td>€4925.0</td>
+                <td>€42.5</td>
+                <td>€4967.5</td>
+                <td></td>
+                <td>732 High St., Valyria KY 97152</td>
+            </tr>
+			<tr>
+                <td id="S5">S5</td>
+                <td><a href="#C5">C5</a></td>
+                <td>
+                    <ul>
+						<li>P1688650 / 4</li>
+					</ul>
+                </td>
+                <td>€5476.0</td>
+                <td>€10.0</td>
+                <td>€5486.0</td>
+                <td>838 Main St., Balmora MT 56526</td>
+                <td>217 High St., Old-town IA 82767</td>
+            </tr>
+		</table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>
 
-		<div class="fifth-table">
-                <h2>Product's Table</h2>
-                <table id="products">
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Quantity Sold</th>
-                    </tr>
-				<tr>
-                        <td>P6030697</td>
-                        <td>10</td>
-                    </tr>
-				<tr>
-                        <td>P4988296</td>
-                        <td>1</td>
-                    </tr>
-				<tr>
-                        <td>P2716640</td>
-                        <td>5</td>
-                    </tr>
-				<tr>
-                        <td>P1504840</td>
-                        <td>5</td>
-                    </tr>
-				<tr>
-                        <td>P6064844</td>
-                        <td>8</td>
-                    </tr>
-				<tr>
-                        <td>P1190460</td>
-                        <td>8</td>
-                    </tr>
-				<tr>
-                        <td>P9841183</td>
-                        <td>9</td>
-                    </tr>
-				<tr>
-                        <td>P1670055</td>
-                        <td>9</td>
-                    </tr>
-				<tr>
-                        <td>P4065182</td>
-                        <td>7</td>
-                    </tr>
-			</table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>
+	<div class="fifth-table">
+        <h2>Product's Table</h2>
+        <table id="products">
+            <tr>
+                <th>Product ID</th>
+                <th>Quantity Sold</th>
+            </tr>
+			<tr>
+                <td>P5189303</td>
+                <td>6</td>
+            </tr>
+			<tr>
+                <td>P4120193</td>
+                <td>2</td>
+            </tr>
+			<tr>
+                <td>P8741763</td>
+                <td>7</td>
+            </tr>
+			<tr>
+                <td>P1923800</td>
+                <td>1</td>
+            </tr>
+			<tr>
+                <td>P8132060</td>
+                <td>2</td>
+            </tr>
+			<tr>
+                <td>P4141540</td>
+                <td>1</td>
+            </tr>
+			<tr>
+                <td>P3717137</td>
+                <td>6</td>
+            </tr>
+			<tr>
+                <td>P3362711</td>
+                <td>6</td>
+            </tr>
+			<tr>
+                <td>P2208364</td>
+                <td>5</td>
+            </tr>
+			<tr>
+                <td>P1688650</td>
+                <td>4</td>
+            </tr>
+		</table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>
 
-	</body>
+</body>
 
 </html>

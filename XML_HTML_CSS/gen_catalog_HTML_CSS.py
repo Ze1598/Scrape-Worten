@@ -79,66 +79,66 @@ def gen_html_css(xml_file):
 
     # Create the HTML that will be written to an .html file at the end
     html_string = f'''<!DOCTYPE html>
-        <html>
-            <head>
-                <title>Worten Daily Catalog</title>
-                <link href="catalog.css" type="text/css" rel="stylesheet" />
-            </head>
+<html>
+<head>
+	<title>Worten Daily Catalog</title>
+	<link href="catalog.css" type="text/css" rel="stylesheet" />
+</head>
 
-            <body>
-                <h1 id="top">Worten online store's catalog</h1>
-		        <h2 id="date">Date: {file_date}</h2>
-                <p class="file-ref"><a href="daily_sales.html" target="_blank">Open Daily Sales Report</a></p>
-                <div class="prod-ref" id="database">
-                    <table class="database">
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Product Internal ID</th>
-                            <th>Product Information</th>
-                            <th>Product Page</th>
-                        </tr>
-    '''
+<body>
+	<h1 id="top">Worten online store's catalog</h1>
+	<h2 id="date">Date: 15/12/2018</h2>
+	<p class="file-ref"><a href="daily_sales.html">Open Daily Sales Report</a></p>
+	<p><a href="auth.html" id="log-out">Log Out</a></p>
+	<div class="prod-ref" id="database">
+		<table class="database">
+			<tr>
+				<th>Product Name</th>
+				<th>Product Internal ID</th>
+				<th>Product Information</th>
+				<th>Product Page</th>
+			</tr>'''
 
     # The table rows for the table at the top of the page
     prod_counter = 1
     for i in range(num_prods):
-        temp_string = f'\n\t\t\t\t\t<tr>' +\
-        f'\n\t\t\t\t\t\t<td>{prod_names[i]}</td>' +\
-        f'\n\t\t\t\t\t\t<td>{prod_ids[i]}</td>' +\
-        f'\n\t\t\t\t\t\t<td><a href="#prod{prod_counter}">Go to product information</a></td>' +\
-        f'\n\t\t\t\t\t\t<td><a href="{prod_pages[i]}" target="_blank">Product page</a></td>' +\
-        f'\n\t\t\t\t\t</tr>'
+        temp_string = f'\n\t\t\t<tr>' +\
+        f'\n\t\t\t\t<td>{prod_names[i]}</td>' +\
+        f'\n\t\t\t\t<td>{prod_ids[i]}</td>' +\
+        f'\n\t\t\t\t<td><a href="#prod{prod_counter}">Go to product information</a></td>' +\
+        f'\n\t\t\t\t<td><a href="{prod_pages[i]}" target="_blank">Product page</a></td>' +\
+        f'\n\t\t\t</tr>'
         prod_counter += 1
         html_string += temp_string
-    html_string += '\n\t\t\t\t</table>\n\t\t\t</div>\n'
+    html_string += '\n\t\t</table>\n\t</div>\n'
 
     # Create the content for each product
     prod_counter = 1
     for i in range(num_prods):
-        temp_string = f'\n\t\t<div class="prod" id="prod{prod_counter}">' +\
-        f'\n\t\t\t<div class="prod-info">' +\
-        f'\n\t\t\t\t<h1 class="prod-name">{prod_names[i]}</h1>'
+        temp_string = f'\n\t<div class="prod" id="prod{prod_counter}">' +\
+        f'\n\t\t<div class="prod-info">' +\
+        f'\n\t\t\t<h1 class="prod-name">{prod_names[i]}</h1>'
         if prod_avail[i] == 'In stock':
-            temp_string += f'\n\t\t\t\t<h3 style="background-color: #01a701" class="avail">Availability: {prod_avail[i]}</h3>'
+            temp_string += f'\n\t\t\t<h3 style="background-color: #01a701" class="avail">Availability: {prod_avail[i]}</h3>'
         else:
-            temp_string += f'\n\t\t\t\t<h3 style="background-color: #a70101" class="not-avail">Availability: {prod_avail[i]}</h3>'
-        temp_string += f'\n\t\t\t\t<p class="prod-id">{prod_ids[i]}<p>' +\
-        f'\n\t\t\t\t<img src="{prod_images[i][0]}" alt="Product Picture"/>' +\
-        f'\n\t\t\t\t<p class="prod-desc">{prod_descs[i]}</p>' +\
-        f'\n\t\t\t</div>' +\
-        f'\n\t\t\t<div class="extra-info">' +\
-        f'\n\t\t\t\t<table class="extra">' +\
-        f'\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Price</td>\n\t\t\t\t\t\t<td>€{prod_prices[i]}</td>\n\t\t\t\t\t</tr>' +\
-        f'\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Category</td>\n\t\t\t\t\t\t<td>{prod_infos[i]["Category"]}</td>\n\t\t\t\t\t</tr>' +\
-        f'\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Brand</td>\n\t\t\t\t\t\t<td>{prod_infos[i]["Brand"]}</td>\n\t\t\t\t\t</tr>' +\
-        f'\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Weight</td>\n\t\t\t\t\t\t<td>{prod_infos[i]["Weight"]}</td>\n\t\t\t\t\t</tr>' +\
-        f'\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Dimensions</td>\n\t\t\t\t\t\t<td>{prod_infos[i]["Dimensions"]}</td>\n\t\t\t\t\t</tr>' +\
-        f'\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Color</td>\n\t\t\t\t\t\t<td>{prod_infos[i]["Color"]}</td>\n\t\t\t\t\t</tr>' +\
-        f'\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td>Stock</td>\n\t\t\t\t\t\t<td>{prod_infos[i]["Stock"]}</td>\n\t\t\t\t\t</tr>' +\
-        f'\n\t\t\t\t\t</table>\n\t\t\t\t</div>\n\t\t<p class="top"><a href="#database">Page Top</a></p>\n\t\t</div>'
+            temp_string += f'\n\t\t\t<h3 style="background-color: #a70101" class="not-avail">Availability: {prod_avail[i]}</h3>'
+        temp_string += f'\n\t\t\t<p class="prod-id">{prod_ids[i]}<p>' +\
+        f'\n\t\t\t<img src="{prod_images[i][0]}" alt="Product Picture"/>' +\
+        f'\n\t\t\t<p class="prod-desc">{prod_descs[i]}</p>' +\
+        f'\n\t\t</div>' +\
+        f'\n\t\t<div class="extra-info">' +\
+        f'\n\t\t\t<table class="extra">' +\
+        f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Price</td>\n\t\t\t\t\t<td>€{prod_prices[i]}</td>\n\t\t\t\t</tr>' +\
+        f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Category</td>\n\t\t\t\t\t<td>{prod_infos[i]["Category"]}</td>\n\t\t\t\t</tr>' +\
+        f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Brand</td>\n\t\t\t\t\t<td>{prod_infos[i]["Brand"]}</td>\n\t\t\t\t</tr>' +\
+        f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Weight</td>\n\t\t\t\t\t<td>{prod_infos[i]["Weight"]}</td>\n\t\t\t\t</tr>' +\
+        f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Dimensions</td>\n\t\t\t\t\t<td>{prod_infos[i]["Dimensions"]}</td>\n\t\t\t\t</tr>' +\
+        f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Color</td>\n\t\t\t\t\t<td>{prod_infos[i]["Color"]}</td>\n\t\t\t\t</tr>' +\
+        f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Stock</td>\n\t\t\t\t\t<td>{prod_infos[i]["Stock"]}</td>\n\t\t\t\t</tr>' +\
+        f'\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t<p class="top"><a href="#database">Page Top</a></p>\n\t</div>'
         prod_counter += 1
         html_string += temp_string
-    html_string += f'\n\t</body>\n\n</html>'
+    html_string += f'\n</body>\n\n</html>'
 
     with open('catalog.html', 'w', encoding='iso-8859-15') as f:
         f.write(html_string)
@@ -149,6 +149,26 @@ def gen_html_css(xml_file):
 body {
 	background: linear-gradient(135deg, #c7503b,#a80404);
 	font-family: Lato,sans-serif;
+}
+
+/* Add the worten logo a the top of the page */
+/* https://stackoverflow.com/questions/12082948/resize-the-content-propertys-image */
+#top:before {
+	/* Display the logo in is own line */
+	display: block;
+	/* Define the width and height for the image to occupy */
+    width: 250px;
+	height: 80px;
+	/* Needed to make the image appear */
+	content: "";
+	background: url("https://logosinside.com/uploads/posts/2016-09/medium/worten-logo.png") no-repeat;	
+	/* Make it so the image rendering origin position is the top left of its box */
+	background-origin: 0;
+	/* Make it so x% of the image is resized to the size of the box */
+	background-size: 100%;
+	background-color: white;
+	border: 2px solid black;
+	margin-bottom: 30px;
 }
 
 /* Adjust the padding for the headers  */
@@ -169,6 +189,17 @@ body {
 	margin-left: 17px;
 }
 
+/* Style the Log Out button */
+#log-out {
+    border: 1px solid black;
+    text-align: center;
+    background-color: yellow;
+    font-size: 105%;
+    width: 15%;
+    padding: 5px;
+	font-weight: bold;
+	margin-left: 17px;
+}
 
 /* Top table */
 

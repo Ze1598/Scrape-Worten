@@ -8,5 +8,5 @@ if __name__ == '__main__':
     print()
     # print('Elapsed time:', round(time.time()-start, 2), 'seconds.')
     print('Both the Catalog and its web page have been created.')
-    print('The created web page will be opened in your default browser.\n')
-    webbrowser.open('catalog.html')
+    # print('The created web page will be opened in your default browser.\n')
+    # webbrowser.open('catalog.html')

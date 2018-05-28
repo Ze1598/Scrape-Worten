@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentication</title>
+    <style>
+        /* Change the page font and the background */
+        body {
+            background: linear-gradient(120deg, #c7503b,#a80404);
+            font-family: Lato,sans-serif;
+        }
+
+        /* Add the worten logo a the top of the page */
+        /* https://stackoverflow.com/questions/12082948/resize-the-content-propertys-image */
+        #top:before {
+            /* Display the logo in is own line */
+            display: block;
+            /* Define the width and height for the image to occupy */
+            width: 250px;
+            height: 80px;
+            /* Needed to make the image appear */
+            content: "";
+            background: url("https://logosinside.com/uploads/posts/2016-09/medium/worten-logo.png") no-repeat;	
+            /* Make it so the image rendering origin position is the top left of its box */
+            background-origin: 0;
+            /* Make it so x% of the image is resized to the size of the box */
+            background-size: 100%;
+            background-color: white;
+            border: 2px solid black;
+            margin-bottom: 30px;
+        }
+        
+        /* Align the first text header to the center of the page */
+        h1 {
+            text-align: center;
+        }
+        
+        /* Align the table to the center of the page */
+        table {
+            margin: auto;
+            background-color: #c2c2c2;
+            border: 2px solid black;
+            padding: 5px;
+            font-size: 105%;
+        }
+
+    </style>
+    <script>
+        // https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
+        function authenticate() {
+            // Get the data from the <form> as an array. Find the element by its ID
+            var getForm = document.getElementById("frm1");
+            var getForm2 = document.getElementById("frm2");
+
+            if (getForm[0].value == 'admin' && getForm[1].value == 'admin') {
+                window.open("catalog.html", name="_self");
+            } else {
+                // In case of wrong credentials, create an alert box with a message to the user
+                window.alert('Wrong Credentials')
+                // After the use closes the alert box, refresh the page to refresh the <form> fields
+                window.location.reload(true);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1 id="top">Worten Daily Sales Report</h1>
+
+    <!-- Table to include the authentication form -->
+    <table>
+        <form id="frm1">
+            <!-- First row is for the username ("admin") -->
+            <tr>
+                <td>Username:</td><td><input type="text" name="username"></td>
+            </tr>
+            <!-- Second row is for the password ("admin") -->
+            <tr>
+                <td>Password:</td><td><input type="password" name="pass"></form></td>
+            </tr>
+        </form>
+            <!-- Third row "submits" the form and either opens the requested page or creates an alert box in case
+                of wrong credentials -->
+            <tr>
+                <td colspan="2" style="text-align: right;"><button onclick="authenticate()">Log In</button></td>
+            </tr>
+    </table>
+    
+</body>
+
+</html>

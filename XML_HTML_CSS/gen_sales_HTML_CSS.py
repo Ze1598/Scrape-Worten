@@ -83,144 +83,146 @@ def gen_html_css(xml_file):
     # Create the HTML
     # The document headers and the head element is always the same
     html_string = '''<!DOCTYPE html>
-    <html>
+<html>
+<head>
+    <title>Worten Daily Sales</title>
+    <link href="daily_sales.css" type="text/css" rel="stylesheet" />
+</head>
 
-        <head>
-            <title>Worten Daily Sales</title>
-            <link href="daily_sales.css" type="text/css" rel="stylesheet" />
-        </head>
+<body>
+    <h1 id="top">Worten online store's daily sales report</h1>
+    <h2 id="date">Date: 29/1/2018</h2>
+    <p class="file-ref"><a href="catalog.html">Open Catatalog</a></p>
+    <p><a href="auth.html" id="log-out">Log Out</a></p>
 
-        <body>'''
-    # Create the page title's and the first table (these are also always the same)
-    html_string += f'\n\t\t<h1 id="top">{file_title}</h1>' +\
-    f'\n\t\t<h2 id="date">Date: {file_date}</h2>' +\
-    f'\n\t\t<p class="file-ref"><a href="catalog.html" target="_blank">Open Catatalog</a></p>' +\
-    f'''\n\n\t\t<div class="first-table">
-                <h2>Tables' Summary</h2>
-                <table class="table-summary">
-                    <tr>
-                        <th><a href="#clients-sales">Clients/Sales</a></th>
-                        <th><a href="#clients">Clients</a></th>
-                        <th><a href="#sales">Sales</a></th>
-                        <th><a href="#products">Products</a></th>
-                    </tr>
-                </table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>''' +\
-    f'''\n\n\t\t<div class="second-table">
-                <h2>Clients/Sales' Table</h2>
-                <table id="clients-sales">
-                    <tr>
-                        <th>Client ID</th>
-                        <th>Sale ID</th>
-                        <th>Subtotal</th>
-                        <th>Shipping</th>
-                        <th>Final Price</th>
-                    </tr>'''
+    <div class="first-table">
+        <h2>Tables' Summary</h2>
+        <table class="table-summary">
+            <tr>
+                <th><a href="#clients-sales">Clients/Sales</a></th>
+                <th><a href="#clients">Clients</a></th>
+                <th><a href="#sales">Sales</a></th>
+                <th><a href="#products">Products</a></th>
+            </tr>
+        </table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>
+
+    <div class="second-table">
+        <h2>Clients/Sales' Table</h2>
+        <table id="clients-sales">
+            <tr>
+                <th>Client ID</th>
+                <th>Sale ID</th>
+                <th>Subtotal</th>
+                <th>Shipping</th>
+                <th>Final Price</th>
+            </tr>
+'''
     # Create the Client/Sales table. For this we need to use\
     # the data scraped to the 'sales_info' dictionary
     for sale in sales_info:
-        temp = f'''\n\t\t\t\t<tr>
-                        <td><a href="#{sales_info[sale]['client']}">{sales_info[sale]['client']}</a></td>
-                        <td><a href="#{sales_info[sale]['id']}">{sales_info[sale]['id']}</a></td>
-                        <td>€{sales_info[sale]['subtotal']}</td>
-                        <td>€{sales_info[sale]['shipping']}</td>
-                        <td>€{sales_info[sale]['final_price']}</td>
-                    </tr>'''
+        temp = f'''\n\t\t\t<tr>
+                <td><a href="#{sales_info[sale]['client']}">{sales_info[sale]['client']}</a></td>
+                <td><a href="#{sales_info[sale]['id']}">{sales_info[sale]['id']}</a></td>
+                <td>€{sales_info[sale]['subtotal']}</td>
+                <td>€{sales_info[sale]['shipping']}</td>
+                <td>€{sales_info[sale]['final_price']}</td>
+            </tr>'''
         html_string += temp
     # Close elements involved with the Client/Sales table
-    html_string += '''\n\t\t\t</table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>'''
+    html_string += '''\n\t\t</table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>'''
     # Create the Client's table
-    html_string += '''\n\n\t\t<div class="third-table">
-                <h2>Client's Table</h2>
-                <table id="clients">
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>TIN</th>
-                        <th>Locality</th>
-                        <th>Address</th>
-                        <th>Phone Number</th>
-                        <th>E-mail</th>
-                    </tr>'''
+    html_string += '''\n\n\t<div class="third-table">
+        <h2>Client's Table</h2>
+        <table id="clients">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>TIN</th>
+                <th>Locality</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>E-mail</th>
+            </tr>'''
     # Fill the Client's table with data. For this we need\
     # to use the data scraped to the 'clients_info' dictionary
     for client in clients_info:
         if client in clients_active:
-            temp = f'''\n\t\t\t\t<tr>
-                        <td id="{client}">{client}</td>
-                        <td>{clients_info[client]['name']}</td>
-                        <td>{clients_info[client]['tin']}</td>
-                        <td>{clients_info[client]['locality']}</td>
-                        <td>{clients_info[client]['address']}</td>
-                        <td>{clients_info[client]['phone']}</td>
-                        <td>{clients_info[client]['email']}</td>
-                    </tr>'''
+            temp = f'''\n\t\t\t<tr>
+                <td id="{client}">{client}</td>
+                <td>{clients_info[client]['name']}</td>
+                <td>{clients_info[client]['tin']}</td>
+                <td>{clients_info[client]['locality']}</td>
+                <td>{clients_info[client]['address']}</td>
+                <td>{clients_info[client]['phone']}</td>
+                <td>{clients_info[client]['email']}</td>
+            </tr>'''
             html_string += temp
     # Close elements involved with the Clients' table
-    html_string += '''\n\t\t\t</table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>'''
+    html_string += '''\n\t\t</table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>'''
     # Create the Sales' table
-    html_string += '''\n\n\t\t<div class="fourth-table">
-                <h2>Sales' Table</h2>
-                <table id="sales">
-                    <tr>
-                        <th>Sale ID</th>
-                        <th>Client ID</th>
-                        <th>Product IDs/<br>Quantities</th>
-                        <th>Subtotal</th>
-                        <th>Shipping</th>
-                        <th>Final Price</th>
-                        <th>Delivery Address</th>
-                        <th>Invoice Address</th>
-                    </tr>'''
+    html_string += '''\n\n\t<div class="fourth-table">
+        <h2>Sales' Table</h2>
+        <table id="sales">
+            <tr>
+                <th>Sale ID</th>
+                <th>Client ID</th>
+                <th>Product IDs/<br>Quantities</th>
+                <th>Subtotal</th>
+                <th>Shipping</th>
+                <th>Final Price</th>
+                <th>Delivery Address</th>
+                <th>Invoice Address</th>
+            </tr>'''
     # Fill the Sales' table with data
     for sale in sales_info:
-        temp = f'''\n\t\t\t\t<tr>
-                        <td id="{sale}">{sale}</td>
-                        <td><a href="#{sales_info[sale]['client']}">{sales_info[sale]['client']}</a></td>
-                        <td>
-                            <ul>'''
+        temp = f'''\n\t\t\t<tr>
+                <td id="{sale}">{sale}</td>
+                <td><a href="#{sales_info[sale]['client']}">{sales_info[sale]['client']}</a></td>
+                <td>
+                    <ul>'''
         for product in products_sold[sale]:
-            temp += f'\n\t\t\t\t\t\t\t<li>{product} / {products_sold[sale][product]}</li>'
-        temp += f'''\n\t\t\t\t\t\t</ul>
-                        </td>
-                        <td>€{sales_info[sale]['subtotal']}</td>
-                        <td>€{sales_info[sale]['shipping']}</td>
-                        <td>€{sales_info[sale]['final_price']}</td>
-                        <td>{sales_info[sale]['delivery_address']}</td>
-                        <td>{sales_info[sale]['invoice_address']}</td>
-                    </tr>'''
+            temp += f'\n\t\t\t\t\t\t<li>{product} / {products_sold[sale][product]}</li>'
+        temp += f'''\n\t\t\t\t\t</ul>
+                </td>
+                <td>€{sales_info[sale]['subtotal']}</td>
+                <td>€{sales_info[sale]['shipping']}</td>
+                <td>€{sales_info[sale]['final_price']}</td>
+                <td>{sales_info[sale]['delivery_address']}</td>
+                <td>{sales_info[sale]['invoice_address']}</td>
+            </tr>'''
         html_string += temp
     # Close the elements related to the Sales' table
-    html_string += '''\n\t\t\t</table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>'''
+    html_string += '''\n\t\t</table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>'''
     # Create the Products' table
-    html_string += '''\n\n\t\t<div class="fifth-table">
-                <h2>Product's Table</h2>
-                <table id="products">
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Quantity Sold</th>
-                    </tr>'''
+    html_string += '''\n\n\t<div class="fifth-table">
+        <h2>Product's Table</h2>
+        <table id="products">
+            <tr>
+                <th>Product ID</th>
+                <th>Quantity Sold</th>
+            </tr>'''
     # Fill the Products' table with data
     for sale in products_sold:
         for product in products_sold[sale]:
-            temp = f'''\n\t\t\t\t<tr>
-                        <td>{product}</td>
-                        <td>{products_sold[sale][product]}</td>
-                    </tr>'''
+            temp = f'''\n\t\t\t<tr>
+                <td>{product}</td>
+                <td>{products_sold[sale][product]}</td>
+            </tr>'''
             html_string += temp
     # Close the elements involved with the Products' table
-    html_string += '''\n\t\t\t</table>
-                <p class="top"><a href="#top">Page Top</a></p>
-            </div>'''
+    html_string += '''\n\t\t</table>
+        <p class="top"><a href="#top">Page Top</a></p>
+    </div>'''
     # Close the body and end the HTML document
-    html_string += '\n\n\t</body>\n\n</html>'
+    html_string += '\n\n</body>\n\n</html>'
 
     # Now write the HTML to an .html file
     with open('daily_sales.html', 'w', encoding='iso-8859-15') as f:
@@ -234,6 +236,27 @@ body {
     background: linear-gradient(135deg, #c7503b,#a80404);
     font-family: Lato,sans-serif;
 }
+
+/* Add the worten logo a the top of the page */
+/* https://stackoverflow.com/questions/12082948/resize-the-content-propertys-image */
+#top:before {
+	/* Display the logo in is own line */
+	display: block;
+	/* Define the width and height for the image to occupy */
+    width: 250px;
+	height: 80px;
+	/* Needed to make the image appear */
+	content: "";
+	background: url("https://logosinside.com/uploads/posts/2016-09/medium/worten-logo.png") no-repeat;	
+	/* Make it so the image rendering origin position is the top left of its box */
+	background-origin: 0;
+	/* Make it so x% of the image is resized to the size of the box */
+	background-size: 100%;
+	background-color: white;
+	border: 2px solid black;
+	margin-bottom: 30px;
+}
+
 
 /* Adjust the padding for the headers  */
 #top, #date {
@@ -250,9 +273,20 @@ body {
     font-size: 105%;
     width: 10%;
     padding: 5px;
-    font-weight: bold;
-    position: relative;
-    right: -1175px;
+	font-weight: bold;
+	margin-left: 17px;
+}
+
+/* Style the Log Out button */
+#log-out {
+    border: 1px solid black;
+    text-align: center;
+    background-color: yellow;
+    font-size: 105%;
+    width: 15%;
+    padding: 5px;
+	font-weight: bold;
+	margin-left: 17px;
 }
 
 

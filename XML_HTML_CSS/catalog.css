@@ -4,6 +4,26 @@ body {
 	font-family: Lato,sans-serif;
 }
 
+/* Add the worten logo a the top of the page */
+/* https://stackoverflow.com/questions/12082948/resize-the-content-propertys-image */
+#top:before {
+	/* Display the logo in is own line */
+	display: block;
+	/* Define the width and height for the image to occupy */
+    width: 250px;
+	height: 80px;
+	/* Needed to make the image appear */
+	content: "";
+	background: url("https://logosinside.com/uploads/posts/2016-09/medium/worten-logo.png") no-repeat;	
+	/* Make it so the image rendering origin position is the top left of its box */
+	background-origin: 0;
+	/* Make it so x% of the image is resized to the size of the box */
+	background-size: 100%;
+	background-color: white;
+	border: 2px solid black;
+	margin-bottom: 30px;
+}
+
 /* Adjust the padding for the headers  */
 #top, #date {
     padding-left: 17px;
@@ -22,6 +42,17 @@ body {
 	margin-left: 17px;
 }
 
+/* Style the Log Out button */
+#log-out {
+    border: 1px solid black;
+    text-align: center;
+    background-color: yellow;
+    font-size: 105%;
+    width: 15%;
+    padding: 5px;
+	font-weight: bold;
+	margin-left: 17px;
+}
 
 /* Top table */
 
