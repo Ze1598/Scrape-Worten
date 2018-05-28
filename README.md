@@ -28,6 +28,8 @@ Update log:
 
 -(may 12th 2018) Updated the files to have a more normalized in file naming but also in file structure. I have also added "XML_HTML_CSS/app_interface.py". You can use just the file because, has the name implies, it is an interface to use the application.
 
+-(may 28th 2018) Updated the application so now it produces an authentication page as the landing page. Users simply use "admin" as username and password otherwise they can't access neither the catalog nor the daily sales. I also updated slightly the structure of the web pages. I purposely left multiple versions of files with the same name in the repo so people can see the difference between what it was before these changes (simply catalog + daily sales) and what it is now (authentication + catalog + daily sales). I also refactored the application interface
+
 
 External references:
 
