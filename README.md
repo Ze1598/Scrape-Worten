@@ -16,7 +16,7 @@ Here's a sample of the end result for the Catalog (recorded with Gyazo GIF): htt
 And here's a sample of the end result for the Daily Sales (recorded with Gyazo GiF): https://gyazo.com/1a144fb147c0899357f5ec1dc1b15603.
 Note: the samples shown above are not that different from what the pages look now, but still, look at this to see the most recent version of the application in action: https://gyazo.com/48db6ceef3f56c06a989e857dcb82325.
 
-You can also use this application online in repl.it, albeit with some slight changes for it to work with the platform: https://repl.it/@ze1598/Scrape-Worten-Application. Please due note the .html, .css, .xml and .dtd files are only written to once the application terminates.
+You can also use this application online in repl.it, albeit with some slight changes for it to work with the platform: https://repl.it/@ze1598/SystemsInteroperabilityProject. Please due note the .html, .css, .xml and .dtd files are only written to once the application terminates.
 
 
 Update log:
@@ -30,6 +30,8 @@ Update log:
 -(may 12th 2018) Updated the files to have a more normalized in file naming but also in file structure. I have also added "XML_HTML_CSS/app_interface.py". You can use just the file because, has the name implies, it is an interface to use the application.
 
 -(may 28th 2018) Updated the application so now it produces an authentication page as the landing page. Users simply use "admin" as username and password otherwise they can't access neither the catalog nor the daily sales. I also updated slightly the structure of the web pages. I purposely left multiple versions of files with the same name in the repo so people can see the difference between what it was before these changes (simply catalog + daily sales) and what it is now (authentication + catalog + daily sales). I also refactored the application interface
+
+-(june 6th 2018) Minor updates to the HTML pages.
 
 
 External references:
