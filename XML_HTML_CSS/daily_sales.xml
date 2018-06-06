@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE daily_sales SYSTEM "daily_sales.dtd">
-<daily_sales day="28" month="4" year="2018" store="WORTEN" local="STA. CATARINA" tin="503630330">
+<daily_sales day="6" month="6" year="2018" store="WORTEN" local="STA. CATARINA" tin="503630330">
 
 	<clients>
 
-		<client id_c="C1" tin_c="891031672">
-			<name>Eric Williams</name>
-			<address locality="N">391 High St., Smalltown WY 28362</address>
-			<contacts>
-				<contact type="PHONE NUMBER">292-555-1875</contact>
-				<contact type="EMAIL">eric_williams@email.com</contact>
-			</contacts>
-		</client>
-
-		<client id_c="C2" tin_c="730394043">
+		<client id_c="C1" tin_c="281849635">
 			<name>Barbara Williams</name>
-			<address locality="H">607 Washington St., Blackwater NH 97183</address>
+			<address locality="W">249 Elm St., Quahog OR 90938</address>
 			<contacts>
-				<contact type="PHONE NUMBER">608-555-4938</contact>
+				<contact type="PHONE NUMBER">516-555-4615</contact>
 				<contact type="EMAIL">barbara_williams@email.com</contact>
 			</contacts>
 		</client>
 
-		<client id_c="C3" tin_c="946224132">
-			<name>Jennifer Martin</name>
-			<address locality="R">121 Hill St., Braavos UT 92474</address>
-			<contacts>
-				<contact type="PHONE NUMBER">880-555-8319</contact>
-				<contact type="EMAIL">jennifer_martin@email.com</contact>
-			</contacts>
-		</client>
-
-		<client id_c="C4" tin_c="973874324">
-			<name>Patricia Brown</name>
-			<address locality="Q">884 High St., Braavos ME 43597</address>
-			<contacts>
-				<contact type="PHONE NUMBER">800-555-5669</contact>
-				<contact type="EMAIL">patricia_brown@email.com</contact>
-			</contacts>
-		</client>
-
-		<client id_c="C5" tin_c="932484853">
-			<name>Dave Martin</name>
-			<address locality="C">173 Main St., Springfield RI 55924</address>
+		<client id_c="C2" tin_c="426419002">
+			<name>Eric Harris</name>
+			<address locality="W">838 Main St., Balmora MT 56526</address>
 			<contacts>
 				<contact type="PHONE NUMBER">614-555-1166</contact>
-				<contact type="EMAIL">dave_martin@email.com</contact>
+				<contact type="EMAIL">eric_harris@email.com</contact>
+			</contacts>
+		</client>
+
+		<client id_c="C3" tin_c="746036713">
+			<name>Erick Davis</name>
+			<address locality="K">217 High St., Old-town IA 82767</address>
+			<contacts>
+				<contact type="PHONE NUMBER">900-555-9340</contact>
+				<contact type="EMAIL">erick_davis@email.com</contact>
+			</contacts>
+		</client>
+
+		<client id_c="C4" tin_c="470525069">
+			<name>Laura Martin</name>
+			<address locality="Y">220 Cedar St., Lakeview NY 87282</address>
+			<contacts>
+				<contact type="PHONE NUMBER">900-555-3205</contact>
+				<contact type="EMAIL">laura_martin@email.com</contact>
+			</contacts>
+		</client>
+
+		<client id_c="C5" tin_c="166019257">
+			<name>Corey Jefferson</name>
+			<address locality="H">607 Washington St., Blackwater NH 97183</address>
+			<contacts>
+				<contact type="PHONE NUMBER">530-555-2676</contact>
+				<contact type="EMAIL">corey_jefferson@email.com</contact>
 			</contacts>
 		</client>
 
@@ -55,62 +55,63 @@
 
 		<sale id_s="S1" client="C2" unit="EURO">
 			<products>
-				<product quantity="6">P5189303</product>
-				<product quantity="2">P4120193</product>
-				<product quantity="7">P8741763</product>
+				<product quantity="6">P8989817</product>
+				<product quantity="3">P4045329</product>
 			</products>
-			<order_price>2863.0</order_price>
+			<order_price>3090.0</order_price>
+			<shipping>22.5</shipping>
+			<final_price>3112.5</final_price>
+			<delivery_address></delivery_address>
+			<invoice_address locality="Z">884 High St., Braavos ME 43597</invoice_address>
+		</sale>
+
+		<sale id_s="S2" client="C2" unit="EURO">
+			<products>
+				<product quantity="4">P8369687</product>
+				<product quantity="3">P5548904</product>
+			</products>
+			<order_price>900.0</order_price>
+			<shipping>17.5</shipping>
+			<final_price>917.5</final_price>
+			<delivery_address></delivery_address>
+			<invoice_address></invoice_address>
+		</sale>
+
+		<sale id_s="S3" client="C1" unit="EURO">
+			<products>
+				<product quantity="5">P6660362</product>
+				<product quantity="6">P8906293</product>
+			</products>
+			<order_price>66.0</order_price>
+			<shipping>27.5</shipping>
+			<final_price>93.5</final_price>
+			<delivery_address></delivery_address>
+			<invoice_address locality="Z">519 Washington St., Olympus TN 32425</invoice_address>
+		</sale>
+
+		<sale id_s="S4" client="C4" unit="EURO">
+			<products>
+				<product quantity="6">P9425051</product>
+				<product quantity="8">P4392990</product>
+			</products>
+			<order_price>6440.0</order_price>
+			<shipping>35.0</shipping>
+			<final_price>6475.0</final_price>
+			<delivery_address locality="H">191 Main St., Mordor IL 72160</delivery_address>
+			<invoice_address></invoice_address>
+		</sale>
+
+		<sale id_s="S5" client="C3" unit="EURO">
+			<products>
+				<product quantity="2">P1473875</product>
+				<product quantity="3">P2680219</product>
+				<product quantity="10">P1823609</product>
+			</products>
+			<order_price>3790.0</order_price>
 			<shipping>37.5</shipping>
-			<final_price>2900.5</final_price>
-			<delivery_address></delivery_address>
-			<invoice_address></invoice_address>
-		</sale>
-
-		<sale id_s="S2" client="C1" unit="EURO">
-			<products>
-				<product quantity="1">P1923800</product>
-			</products>
-			<order_price>1107.0</order_price>
-			<shipping>2.5</shipping>
-			<final_price>1109.5</final_price>
-			<delivery_address></delivery_address>
-			<invoice_address></invoice_address>
-		</sale>
-
-		<sale id_s="S3" client="C3" unit="EURO">
-			<products>
-				<product quantity="2">P8132060</product>
-				<product quantity="1">P4141540</product>
-			</products>
-			<order_price>1151.0</order_price>
-			<shipping>7.5</shipping>
-			<final_price>1158.5</final_price>
-			<delivery_address></delivery_address>
-			<invoice_address locality="L">625 Oak St., Dawnstar IL 61914</invoice_address>
-		</sale>
-
-		<sale id_s="S4" client="C1" unit="EURO">
-			<products>
-				<product quantity="6">P3717137</product>
-				<product quantity="6">P3362711</product>
-				<product quantity="5">P2208364</product>
-			</products>
-			<order_price>4925.0</order_price>
-			<shipping>42.5</shipping>
-			<final_price>4967.5</final_price>
-			<delivery_address></delivery_address>
-			<invoice_address locality="T">732 High St., Valyria KY 97152</invoice_address>
-		</sale>
-
-		<sale id_s="S5" client="C5" unit="EURO">
-			<products>
-				<product quantity="4">P1688650</product>
-			</products>
-			<order_price>5476.0</order_price>
-			<shipping>10.0</shipping>
-			<final_price>5486.0</final_price>
-			<delivery_address locality="X">838 Main St., Balmora MT 56526</delivery_address>
-			<invoice_address locality="X">217 High St., Old-town IA 82767</invoice_address>
+			<final_price>3827.5</final_price>
+			<delivery_address locality="G">173 Main St., Springfield RI 55924</delivery_address>
+			<invoice_address locality="G">806 1st St., Faketown AK 86847</invoice_address>
 		</sale>
 
 	</sales>

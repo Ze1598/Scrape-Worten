@@ -1,7 +1,8 @@
 # -*- coding: iso-8859-15 -*-
 
 from bs4 import BeautifulSoup
-import time
+# import time
+from datetime import datetime
 
 def gen_html_css(xml_file):
     '''
@@ -87,10 +88,10 @@ def gen_html_css(xml_file):
 
 <body>
 	<h1 id="top">Worten online store's catalog</h1>
-	<h2 id="date">Date: 15/12/2018</h2>
+	<h2 id="date">Date: {datetime.now().day}/{datetime.now().month}/{datetime.now().year}</h2>
 	<p class="file-ref"><a href="daily_sales.html">Open Daily Sales Report</a></p>
 	<p><a href="auth.html" id="log-out">Log Out</a></p>
-	<div class="prod-ref" id="database">
+	<header class="prod-ref" id="database">
 		<table class="database">
 			<tr>
 				<th>Product Name</th>
@@ -110,13 +111,13 @@ def gen_html_css(xml_file):
         f'\n\t\t\t</tr>'
         prod_counter += 1
         html_string += temp_string
-    html_string += '\n\t\t</table>\n\t</div>\n'
+    html_string += '\n\t\t</table>\n\t</header>\n'
 
     # Create the content for each product
     prod_counter = 1
     for i in range(num_prods):
-        temp_string = f'\n\t<div class="prod" id="prod{prod_counter}">' +\
-        f'\n\t\t<div class="prod-info">' +\
+        temp_string = f'\n\t<article class="prod" id="prod{prod_counter}">' +\
+        f'\n\t\t<section class="prod-info">' +\
         f'\n\t\t\t<h1 class="prod-name">{prod_names[i]}</h1>'
         if prod_avail[i] == 'In stock':
             temp_string += f'\n\t\t\t<h3 style="background-color: #01a701" class="avail">Availability: {prod_avail[i]}</h3>'
@@ -125,8 +126,8 @@ def gen_html_css(xml_file):
         temp_string += f'\n\t\t\t<p class="prod-id">{prod_ids[i]}<p>' +\
         f'\n\t\t\t<img src="{prod_images[i][0]}" alt="Product Picture"/>' +\
         f'\n\t\t\t<p class="prod-desc">{prod_descs[i]}</p>' +\
-        f'\n\t\t</div>' +\
-        f'\n\t\t<div class="extra-info">' +\
+        f'\n\t\t</section>' +\
+        f'\n\t\t<section class="extra-info">' +\
         f'\n\t\t\t<table class="extra">' +\
         f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Price</td>\n\t\t\t\t\t<td>€{prod_prices[i]}</td>\n\t\t\t\t</tr>' +\
         f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Category</td>\n\t\t\t\t\t<td>{prod_infos[i]["Category"]}</td>\n\t\t\t\t</tr>' +\
@@ -135,7 +136,7 @@ def gen_html_css(xml_file):
         f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Dimensions</td>\n\t\t\t\t\t<td>{prod_infos[i]["Dimensions"]}</td>\n\t\t\t\t</tr>' +\
         f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Color</td>\n\t\t\t\t\t<td>{prod_infos[i]["Color"]}</td>\n\t\t\t\t</tr>' +\
         f'\n\t\t\t\t<tr>\n\t\t\t\t\t<td>Stock</td>\n\t\t\t\t\t<td>{prod_infos[i]["Stock"]}</td>\n\t\t\t\t</tr>' +\
-        f'\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t<p class="top"><a href="#database">Page Top</a></p>\n\t</div>'
+        f'\n\t\t\t\t</table>\n\t\t\t</section>\n\t\t<p class="top"><a href="#database">Page Top</a></p>\n\t</article>'
         prod_counter += 1
         html_string += temp_string
     html_string += f'\n</body>\n\n</html>'
@@ -318,7 +319,7 @@ th, td {
 .prod-id {
 	font-size: 120%;
 }
-div img {
+article img {
 	border: 3px solid grey;
 }
 .prod-desc {

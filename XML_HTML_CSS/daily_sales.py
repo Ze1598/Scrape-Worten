@@ -1,5 +1,6 @@
 from random import choice, randint
-from time import time
+# from time import time
+from datetime import datetime
 
 def create_sales():
     '''
@@ -18,7 +19,7 @@ def create_sales():
     '''
     # The start time of the script (to be used for timing\
     # how long it takes to run)
-    start = time()
+    # start = time()
 
     # Datasets to generate data from
     names = ['Dave Martin', 'Charles Harris', 'Eric Williams', 'Corey Jefferson', 'Jennifer Martin', 'Erick Davis', 'Neil Patterson', 'Laura Jefferson', 'Maria Johnson', 'Michael Arnold', 'Michael Smith', 'Erik Stuart', 'Laura Martin', 'Patricia Thomas', 'Jennifer Davis', 'Patricia Brown', 'Barbara Williams', 'James Taylor', 'Eric Harris', 'Travis Anderson']
@@ -43,7 +44,7 @@ def create_sales():
     # Note: tin stands for Taxpayer Identification Number (NIF in Portugal)
     xml_string = '<?xml version="1.0" encoding="UTF-8" ?>' +\
     '\n<!DOCTYPE daily_sales SYSTEM "daily_sales.dtd">' +\
-    f'\n<daily_sales day="{randint(1,31)}" month="{randint(1,12)}" year="2018" store="WORTEN" local="STA. CATARINA" tin="503630330">' +\
+    f'\n<daily_sales day="{datetime.now().day}" month="{datetime.now().month}" year="{datetime.now().year}" store="WORTEN" local="STA. CATARINA" tin="503630330">' +\
     '\n\n\t<clients>\n'
 
     # Create 5 clients for the XML document

@@ -2,8 +2,10 @@
 from requests import post, get
 # https://beautiful-soup-4.readthedocs.io/en/latest/
 from bs4 import BeautifulSoup
-from time import time
+# from time import time
 from random import randint
+import urllib
+from datetime import datetime
 
 def scrape(args):
     '''
@@ -24,14 +26,12 @@ def scrape(args):
     try:
         # Target website
         target = 'https://www.worten.pt'
-        # String formatting to accomodate query with multiple words
-        args = args.replace(' ', '+')
-        # Make a get request to get a text version of the query results
-        query = get('https://www.worten.pt/search?sortBy=relevance&hitsPerPage=24&page=1&query='+args)
+        # Make a GET request to get a text version of the query results
+        # Use urllib.parse.urlenconde() to properly encode the arguments for the GET request URL
+        query = get('https://www.worten.pt/search?sortBy=relevance&hitsPerPage=24&page=1&'+ urllib.parse.urlencode({'query': args})) 
         # Create a BeautifulSoup object to hold the scraped html, encoding the raw data from\
         # the Response object with iso-8859-15
         soup = BeautifulSoup(query.content, 'lxml', from_encoding="iso-8859-15")
-
         # Product page for the first result of the query
         prod_link = target + soup.find('div', class_='w-product__wrapper').a["href"]
         # Text version of the product's page source code
@@ -226,7 +226,7 @@ def write_xml():
     error_count = 0
     while arg:
         # Time how long it takes to run each iteration of the loop
-        start = time()
+        # start = time()
         # Ask the user for the tags to be searched for
         arg = input('Enter tags for the query (enter nothing to finish scraping products): ')
         # If the user entered a valid input (if not the\
@@ -264,7 +264,7 @@ if __name__ == '__main__':
     # The beginning of the .xml, with the header, .dtd location and root element
     xml_string = f'''<?xml version="1.0" encoding="iso-8859-15" ?>
 <!DOCTYPE catalog SYSTEM "catalog.dtd">
-<catalog day="{randint(1,31)}" month="{randint(1,12)}" year="2018" store="Worten">'''
+<catalog day="{datetime.now().day}" month="{datetime.now().month}" year="{datetime.now().year}" store="Worten">'''
 
     # This will prompt the user for tags for the queries, scrape the information\
     # and return it as XML in a string

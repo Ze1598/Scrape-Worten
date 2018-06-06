@@ -9,7 +9,8 @@ Note this script is supposed to be run after
 '''
 
 from bs4 import BeautifulSoup
-import time
+# import time
+from datetime import datetime
 
 def gen_html_css(xml_file):
     # Open the target .xml file
@@ -82,7 +83,7 @@ def gen_html_css(xml_file):
 
     # Create the HTML
     # The document headers and the head element is always the same
-    html_string = '''<!DOCTYPE html>
+    html_string = f'''<!DOCTYPE html>
 <html>
 <head>
     <title>Worten Daily Sales</title>
@@ -91,11 +92,11 @@ def gen_html_css(xml_file):
 
 <body>
     <h1 id="top">Worten online store's daily sales report</h1>
-    <h2 id="date">Date: 29/1/2018</h2>
+    <h2 id="date">Date: {datetime.now().day}/{datetime.now().month}/{datetime.now().year}</h2>
     <p class="file-ref"><a href="catalog.html">Open Catatalog</a></p>
     <p><a href="auth.html" id="log-out">Log Out</a></p>
 
-    <div class="first-table">
+    <section class="first-table">
         <h2>Tables' Summary</h2>
         <table class="table-summary">
             <tr>
@@ -106,9 +107,9 @@ def gen_html_css(xml_file):
             </tr>
         </table>
         <p class="top"><a href="#top">Page Top</a></p>
-    </div>
+    </section>
 
-    <div class="second-table">
+    <section class="second-table">
         <h2>Clients/Sales' Table</h2>
         <table id="clients-sales">
             <tr>
@@ -133,9 +134,9 @@ def gen_html_css(xml_file):
     # Close elements involved with the Client/Sales table
     html_string += '''\n\t\t</table>
         <p class="top"><a href="#top">Page Top</a></p>
-    </div>'''
+    </section>'''
     # Create the Client's table
-    html_string += '''\n\n\t<div class="third-table">
+    html_string += '''\n\n\t<section class="third-table">
         <h2>Client's Table</h2>
         <table id="clients">
             <tr>
@@ -164,9 +165,9 @@ def gen_html_css(xml_file):
     # Close elements involved with the Clients' table
     html_string += '''\n\t\t</table>
         <p class="top"><a href="#top">Page Top</a></p>
-    </div>'''
+    </section>'''
     # Create the Sales' table
-    html_string += '''\n\n\t<div class="fourth-table">
+    html_string += '''\n\n\t<section class="fourth-table">
         <h2>Sales' Table</h2>
         <table id="sales">
             <tr>
@@ -200,9 +201,9 @@ def gen_html_css(xml_file):
     # Close the elements related to the Sales' table
     html_string += '''\n\t\t</table>
         <p class="top"><a href="#top">Page Top</a></p>
-    </div>'''
+    </section>'''
     # Create the Products' table
-    html_string += '''\n\n\t<div class="fifth-table">
+    html_string += '''\n\n\t<section class="fifth-table">
         <h2>Product's Table</h2>
         <table id="products">
             <tr>
@@ -220,7 +221,7 @@ def gen_html_css(xml_file):
     # Close the elements involved with the Products' table
     html_string += '''\n\t\t</table>
         <p class="top"><a href="#top">Page Top</a></p>
-    </div>'''
+    </section>'''
     # Close the body and end the HTML document
     html_string += '\n\n</body>\n\n</html>'
 
@@ -305,16 +306,16 @@ li {
 }
 
 
-/* Format each div, knowing that each div contains one table and a
+/* Format each <section>, knowing that each <section> contains one table and a
     "Page Top" anchor */
-div {
+section {
     background: linear-gradient(135deg, #46a3f0, #2036fc);
     padding: 5px 5px 10px 10px;
     margin: 15px;
     border: 2px solid black;
 }
-/* When hovering over a div, change its background and border */
-div:hover {
+/* When hovering over a section, change its background and border */
+section:hover {
     border: 3px solid black;
     background: linear-gradient(135deg, #46f0b7, #007552);
 }

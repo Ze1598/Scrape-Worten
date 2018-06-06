@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-15" ?>
 <!DOCTYPE catalog SYSTEM "catalog.dtd">
-<catalog day="31" month="11" year="2018" store="Worten">
+<catalog day="6" month="6" year="2018" store="Worten">
 
 	<product id="P6457228" avail="In stock" link="https://www.worten.pt/gaming/ps4/jogos-ps4/jogo-ps4-god-of-war-edicao-normal-6457228">
 		<name>Jogo PS4 God of War Edição Normal</name>
@@ -18,32 +18,47 @@
 			<info type="Weight">Information not available</info>
 			<info type="Dimensions">Information not available</info>
 			<info type="Color">Information not available</info>
-			<info type="Stock">25</info>
+			<info type="Stock">54</info>
 		</extra_info>
 	</product>
 
 
-	<product id="P6586393" avail="In stock" link="https://www.worten.pt/gaming/nintendo-switch/jogos-nintendo-switch/jogo-nintendo-switch-hyrule-warriors-definitive-edition-6586393">
-		<name>Jogo Nintendo Switch Hyrule Warriors: Definitive Edition</name>
-		<pu>59,99</pu>
+	<product id="P6060390" avail="In stock" link="https://www.worten.pt/gaming/nintendo-switch/consolas-nintendo-switch/consola-nintendo-switch-azul-neon-vermelho-neon-6060390">
+		<name>Consola NINTENDO Switch Azul Néon/Vermelho Néon</name>
+		<pu>329,99</pu>
 		<images>
-			<image ref="https://www.worten.pt/i/e432e589dbc3f0790757ac699d2ba84c22c29951.jpg"/>
+			<image ref="https://www.worten.pt/i/407baf74278ca1d80885e239352f58516dc65b60.jpg"/>
+			<image ref="https://www.worten.pt/i/68f86df8bfde1a07cbbd4575b1024e87beebdfb2.jpg"/>
+			<image ref="https://www.worten.pt/i/34ae4cddf3a504d920b389da80632765ecb5dc2a.jpg"/>
+			<image ref="https://www.worten.pt/i/4e6957b167308eb4f7e62eb35df26d20c0c48de5.jpg"/>
+			<image ref="https://www.worten.pt/i/567a3e8b72a897fee399b8fb8df7b84037fca6f1.jpg"/>
+			<image ref="https://www.worten.pt/i/f96ff159a4d27f50ec94a6e6257ac78e5dba0e40.jpg"/>
+			<image ref="https://www.worten.pt/i/f4a36157b3a63587c76f16d278ebc1efeb3518d9.jpg"/>
+			<image ref="https://www.worten.pt/i/85fa90b02d837f1028cfe996ec7abe989dd72462.jpg"/>
+			<image ref="https://www.worten.pt/i/c5e9daff2c3769f102efc733339a3d557c81ab69.jpg"/>
+			<image ref="https://www.worten.pt/i/5449801e22859fe9475b1aecd3208c77cba784d5.jpg"/>
+			<image ref="https://www.worten.pt/i/46820cdb1574731950dbbc146d8d302494bf8120.jpg"/>
+			<image ref="https://www.worten.pt/i/e93d370dc3f40bf5b0bb9983eb9605e68e0645a7.jpg"/>
+			<image ref="https://www.worten.pt/i/3ccd49d5369f0daeb327e8763bedb978e5340da9.jpg"/>
+			<image ref="https://www.worten.pt/i/f292de471abbb5d0dce6cf8b6481a186cfd22474.jpg"/>
+			<image ref="https://www.worten.pt//img.youtube.com/vi/jfKw0BYmIfg/default.jpg"/>
+			<image ref="https://www.worten.pt//img.youtube.com/vi/S_dZ93lsZQ8/default.jpg"/>
 		</images>
 		<description>Product description not available</description>
 		<extra_info>
-			<info type="Category">Jogos Nintendo Switch</info>
+			<info type="Category">Consolas Nintendo Switch</info>
 			<info type="Brand">NINTENDO</info>
-			<info type="Weight">Information not available</info>
-			<info type="Dimensions">Information not available</info>
-			<info type="Color">Information not available</info>
-			<info type="Stock">29</info>
+			<info type="Weight">297 g (com comandos: 398 g)</info>
+			<info type="Dimensions">102 mm*239 mm*13,9 mm</info>
+			<info type="Color">Neón Azul / Vermelho</info>
+			<info type="Stock">26</info>
 		</extra_info>
 	</product>
 
 
 	<product id="P6335200" avail="In stock" link="https://www.worten.pt/smartphones-e-comunicacoes/telemoveis-e-smartphones/iphone/smartphone-apple-iphone-x-256gb-cinzento-sideral-6335200">
 		<name>Smartphone APPLE iPhone X 256GB Cinzento sideral</name>
-		<pu>1359,00</pu>
+		<pu>1299,00</pu>
 		<images>
 			<image ref="https://www.worten.pt/i/c1c55b99aa82233fd0fb918bc45077453e427348.jpg"/>
 			<image ref="https://www.worten.pt/i/5a1e1e84bc16a2a9ed5ef8a2e564ddeca7a34c09.jpg"/>
@@ -58,7 +73,32 @@
 			<info type="Weight">174 g</info>
 			<info type="Dimensions">14.36 cm*7.09 cm*0.77 cm</info>
 			<info type="Color">Cinzento sideral</info>
-			<info type="Stock">92</info>
+			<info type="Stock">69</info>
+		</extra_info>
+	</product>
+
+
+	<product id="P6595008" avail="In stock" link="https://www.worten.pt/tv-video-e-som/video/apple-tv-box-smart-tv/tv-box-streamer-emtec-f510-6595008">
+		<name>TV Box Streamer EMTEC F510</name>
+		<pu>104,99</pu>
+		<images>
+			<image ref="https://www.worten.pt/i/5a3aa5b16224071d966cd9fca6336559b78015f0.jpg"/>
+			<image ref="https://www.worten.pt/i/7eeefe0d276f1d5a3e01b41a71d1d6e0927a2b59.jpg"/>
+			<image ref="https://www.worten.pt/i/ee9dd8735362f3bc6687b9500713741db9e1810f.jpg"/>
+			<image ref="https://www.worten.pt/i/4af505856e8504789bed1983a1021a6e6bc59c33.jpg"/>
+			<image ref="https://www.worten.pt/i/e7dafcae5a5b51ac052b0ca1be6eb1abd1fddca2.jpg"/>
+			<image ref="https://www.worten.pt/i/9c3b18e370a9148c110fd207cb95fe488709c3ed.jpg"/>
+			<image ref="https://www.worten.pt/i/b6e9e9707b28aab0c20203795431036b6eb00d44.jpg"/>
+			<image ref="https://www.worten.pt/i/27d48d7d9c2aca7c7f1ef96190cb779b22232c19.jpg"/>
+		</images>
+		<description>Product description not available</description>
+		<extra_info>
+			<info type="Category">Apple TV / Box Smart TV</info>
+			<info type="Brand">EMTEC</info>
+			<info type="Weight">0,3g</info>
+			<info type="Dimensions">7*11*13</info>
+			<info type="Color">Preto</info>
+			<info type="Stock">9</info>
 		</extra_info>
 	</product>
 
