@@ -14,6 +14,7 @@ TL;DR: to scrape the products you want and display its informations in a web bro
 
 Here's a sample of the end result for the Catalog (recorded with Gyazo GIF): https://gyazo.com/b50f6d8ab3b7982fd35d9cab9e41051a.
 And here's a sample of the end result for the Daily Sales (recorded with Gyazo GiF): https://gyazo.com/1a144fb147c0899357f5ec1dc1b15603.
+
 Note: the samples shown above are not that different from what the pages look now, but still, look at this to see the most recent version of the application in action: https://gyazo.com/48db6ceef3f56c06a989e857dcb82325.
 
 You can also use this application online in repl.it, albeit with some slight changes for it to work with the platform: https://repl.it/@ze1598/SystemsInteroperabilityProject. Please due note the .html, .css, .xml and .dtd files are only written to once the application terminates.
